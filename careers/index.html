@@ -1,144 +1,301 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Services | Pennock Systems</title>
-  <link rel="stylesheet" href="../style.css" />
-  <link rel="stylesheet" href="services.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="icon" href="../images/ChatGPT Image May 2, 2025, 07_48_05 PM.png" type="image/png" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Careers | Pennock Systems</title>
+  <meta name="description" content="Join Pennock Systems and help build AI assistants, automation, and modern web systems for growing businesses. View open roles and send us your resume.">
+  <link rel="stylesheet" href="../index.css">
+  <link rel="stylesheet" href="career.css">
+  <link rel="icon" href="Logo.png" type="image/png" />
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="nav-left">
-        <a href="/" class="logo-link">
-          <img src="../images/ChatGPT Image May 2, 2025, 07_48_05 PM.png" alt="Pennock Systems Logo" class="logo-img" />
-        </a>
-      </div>
-        
-            <!-- Hamburger -->
-        <div class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-          
-            <ul class="nav-links" id="nav-links">
-              <li><a href="/services">Services</a></li>  
-              <li><a href="/work">Work</a></li>
-              <li><a href="/about">About Us</a></li>
-              <li><a href="/contact">Contact</a></li>
-            </ul>
-          </nav>  
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand" aria-label="Pennock Systems home">
+        <img class="brand-logo" src="logo.png" alt="Pennock Systems logo">
+        <span>Pennock Systems</span>
+      </a>
 
-  <!-- Hero Section -->
-  <section class="services-hero">
-    <canvas id="matrix-canvas"></canvas>
-  
-    <div class="hero-content glass-box">
-      <h1 id="typing-header"></h1>
-      <p id="typing-sub"></p>
-    </div>
-  </section>
-  
-  
+      <nav class="nav-links" aria-label="Primary navigation">
+      <a href="how.html">How It Works</a>
+      <a href="career.html">Careers</a>
+      <a href="contact.html">Contact</a>
+    </nav>
 
-  <!-- Services Section -->
-  <section class="services-list">
-    <div class="service-box">
-      <h3>AI Assistants</h3>
-      <p>We build intelligent, AI-powered chat experiences tailored to your business needs—available 24/7 to serve your customers.</p>
+      <div class="nav-actions">
+        <a class="button secondary" href="login.html">Login</a>
+        <a class="button primary" href="contact.html">Let's Chat</a>
+      </div>
     </div>
-    <div class="service-box">
-      <h3>Technology Consulting</h3>
-      <p>Receive expert guidance on implementing the right digital strategies to grow your business efficiently and effectively.</p>
-    </div>
-    <div class="service-box">
-      <h3>Web Development</h3>
-      <p>We design and develop custom, responsive websites that showcase your brand and convert visitors into clients.</p>
-    </div>
-    <div class="service-box">
-      <h3>Virtual Resumes</h3>
-      <p>Showcase your strengths with personalized virtual resumes designed to highlight skills, achievements, and career goals in a modern, interactive way.</p>
-    </div>
-  </section>
+  </header>
 
-  <!-- Tiered Service Packages Section -->
-<section class="tiered-packages">
-    <h2>What We Offer</h2>
-    <div class="package-container">
-      
-      <div class="package-box basic">
-        <h3>Base</h3>
-        <p class="package-desc">Great for small businesses just getting started with automation.</p>
-        <ul>
-          <li>Essential Chatbot with Preloaded Responses</li>
-          <li>Single-Page Website Integration</li>
-          <li>Basic Analytics & User Tracking</li>
-          <li>Standard Email Support</li>
-        </ul>
-        <a href="/contact/" class="package-btn">Learn More</a>
-      </div>
-  
-      <div class="package-box standard">
-        <h3>Professional</h3>
-        <p class="package-desc">Ideal for growing teams who need more control and customization.</p>
-        <ul>
-          <li>Interactive Chatbot with Learning Capabilities</li>
-          <li>Multi-Page Web Integration</li>
-          <li>Analytics Dashboard</li>
-          <li>Priority Email support</li>
-        </ul>
-        <a href="/contact/" class="package-btn">Learn More</a>
-      </div>
-  
-      <div class="package-box premium">
-        <h3>Premier</h3>
-        <p class="package-desc">Best for businesses that need robust, multi-platform automation.</p>
-        <ul>
-          <li>Advanced API Integrations</li>
-          <li>Full Website Development or Redesign</li>
-          <li>Multi-Channel Support (Web, SMS, WhatsApp, etc.)</li>
-          <li>Dedicated Account Consultant</li>
-        </ul>
-        <a href="/contact/" class="package-btn">Learn More</a>
-      </div>
-  
-    </div>
-  </section>  
+  <main>
 
-<!-- CTA Section -->
-<section class="services-cta">
-  <h2>See What We've Built</h2>
-  <p>Explore real solutions we've delivered for clients across industries.</p>
-  <a href="/work/" class="cta-button">View Our Work</a>
+<section class="careers-hero">
+  <div class="container hero-grid">
+
+    <!-- LEFT SIDE -->
+    <div class="hero-left">
+      <h1>Build the Future of AI Automation</h1>
+
+      <p>
+        Join a team building meaningful systems that help businesses automate, scale, and operate smarter.
+      </p>
+    </div>
+
+    <!-- RIGHT SIDE (LIVE SYSTEM CARDS) -->
+    <div class="hero-right">
+
+      <div class="floating-card card-1">
+        ⚡ Automating Real Business Operations
+        <span>Replacing manual workflows with intelligent systems</span>
+      </div>
+
+      <div class="floating-card card-2">
+        🔗 End-to-End Client System Design
+        <span>Own the process from discovery calls to deployment</span>
+      </div>
+
+      <div class="floating-card card-3">
+        📊 Measureable Operational Improvements
+        <span>Speed, efficiency, scalability</span>
+      </div>
+
+    </div>
+
+  </div>
 </section>
 
-  <!-- Footer -->
-<footer class="site-footer">
-  <div class="footer-container">
-    <p>&copy; 2026 Pennock Systems. All rights reserved.</p>
-    <div class="footer-socials">
-      <a href="https://www.instagram.com/pennocksystems" target="_blank" aria-label="Instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://twitter.com/pennocksystems" target="_blank" aria-label="Twitter">
-        <i class="fab fa-twitter"></i>
-      </a>
+    <!-- Why work here -->
+    <section class="careers-perks">
+      <div class="container">
+        <div class="section-head">
+          <h2>Why Pennock Systems?</h2>
+          <p>Become a part of a team focused on building and delivering meaningful solutions to those who need it most.</p>
+        </div>
+
+        <div class="perk-grid">
+          <div class="perk-card">
+            <div class="perk-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 12h4l2-6 4 12 2-6h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Remote-first</h3>
+            <p>Work from wherever you're most productive. We care about output, not hours logged.</p>
+          </div>
+
+          <div class="perk-card">
+            <div class="perk-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 19V6a2 2 0 0 1 2-2h9l5 5v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                <path d="M9 14h6M9 10.5h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Real client impact</h3>
+            <p>Your work goes live for actual businesses — not internal demos that never ship.</p>
+          </div>
+
+          <div class="perk-card">
+            <div class="perk-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/>
+                <path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Flexible schedule</h3>
+            <p>Set your own hours around a few overlapping check-ins each week.</p>
+          </div>
+
+          <div class="perk-card">
+            <div class="perk-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 3 4 6.5v5C4 16.5 7.5 20 12 21c4.5-1 8-4.5 8-9.5v-5L12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Room to grow</h3>
+            <p>Your scope grows with you — across AI, automation, and web.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- Open positions -->
+<section class="careers-positions" id="positions">
+  <div class="container">
+    <div class="section-head">
+      <h2>Open Positions</h2>
+      <p>Join a team that builds meaningful solutions for those who need it most. Browse our open positions below.</p>
+    </div>
+
+    <div class="job-list">
+
+      <!-- Job 1 -->
+      <article class="job-card">
+        <div class="job-card-head">
+          <h3>AI Automation Specialist</h3>
+
+          <div class="job-tags">
+            <span class="job-tag">Remote</span>
+            <span class="job-tag">Full-time</span>
+            <span class="job-tag">Engineering</span>
+          </div>
+        </div>
+
+<p class="job-summary">
+  Design and maintain custom automations that connect CRMs, scheduling tools, and communication platforms for our clients.
+</p>
+
+<button class="learn-more" onclick="toggleJob(this)">Learn More</button>
+
+<div class="job-details">
+  <div class="feature-list">
+    <div class="feature-item">Design multi-step automation workflows</div>
+    <div class="feature-item">Integrate APIs across CRM, calendar, and messaging tools</div>
+    <div class="feature-item">Troubleshoot and optimize live client automations</div>
+    <div class="feature-item">Collaborate with the design team on system architecture</div>
+  </div>
+
+  <div class="job-apply-row">
+    <a class="button primary" href="mailto:careers@pennocksystems.com?subject=Application%3A%20AI%20Automation%20Specialist">
+      Apply via Email
+    </a>
+  </div>
+
+</div>
+      </article>
+
+      <!-- Job 2 -->
+      <article class="job-card">
+        <div class="job-card-head">
+          <h3>Front-End Developer</h3>
+
+          <div class="job-tags">
+            <span class="job-tag">Remote / Hybrid</span>
+            <span class="job-tag">Full-time</span>
+            <span class="job-tag">Engineering</span>
+          </div>
+        </div>
+
+        <p class="job-summary">
+          Build clean, fast, conversion-focused websites and web apps for our growing client base.
+        </p>
+
+        <button class="learn-more" onclick="toggleJob(this)">Learn More</button>
+
+        <div class="job-details">
+          <ul class="feature-list">
+            <div class="feature-item">Build responsive sites from design files</div>
+            <div class="feature-item">Implement AI assistant integrations into client sites</div>
+            <div class="feature-item">Optimize for performance, accessibility, and SEO</div>
+            <div class="feature-item">Maintain and update existing client websites</div>
+          </ul>
+
+          <div class="job-apply-row">
+            <a class="button primary" href="mailto:careers@pennocksystems.com?subject=Application%3A%20Front-End%20Developer">
+              Apply via Email
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Job 3 -->
+      <article class="job-card">
+        <div class="job-card-head">
+          <h3>AI Solutions Consultant</h3>
+
+          <div class="job-tags">
+            <span class="job-tag">Remote</span>
+            <span class="job-tag">Contract</span>
+            <span class="job-tag">Client Success</span>
+          </div>
+        </div>
+
+        <p class="job-summary">
+          Work directly with clients to identify automation opportunities and translate business needs into AI system requirements.
+        </p>
+
+        <button class="learn-more" onclick="toggleJob(this)">Learn More</button>
+
+        <div class="job-details">
+          <ul class="feature-list">
+            <div class="feature-item">Run discovery calls with prospective clients</div>
+            <div class="feature-item">Map workflows and identify automation opportunities</div>
+            <div class="feature-item">Translate findings into clear project scopes</div>
+            <div class="feature-item">Support onboarding for newly signed clients</div>
+          </ul>
+
+          <div class="job-apply-row">
+            <a class="button primary" href="mailto:careers@pennocksystems.com?subject=Application%3A%20AI%20Solutions%20Consultant">
+              Apply via Email
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Job 4 -->
+      <article class="job-card">
+        <div class="job-card-head">
+          <h3>Customer Success Associate</h3>
+
+          <div class="job-tags">
+            <span class="job-tag">Remote</span>
+            <span class="job-tag">Part-time</span>
+            <span class="job-tag">Support</span>
+          </div>
+        </div>
+
+        <p class="job-summary">
+          Be the friendly first point of contact for client questions, account updates, and ongoing support requests.
+        </p>
+
+        <button class="learn-more" onclick="toggleJob(this)">Learn More</button>
+
+        <div class="job-details">
+          <ul class="feature-list">
+            <div class="feature-item">Respond to client emails and support tickets</div>
+            <div class="feature-item">Coordinate onboarding tasks and scheduling</div>
+            <div class="feature-item">Track client feedback and flag recurring issues</div>
+            <div class="feature-item">Maintain documentation for support workflows</div>
+          </ul>
+
+          <div class="job-apply-row">
+            <a class="button primary" href="mailto:careers@pennocksystems.com?subject=Application%3A%20Customer%20Success%20Associate">
+              Apply via Email
+            </a>
+          </div>
+          <script>
+  function toggleJob(button) {
+    const card = button.closest(".job-card");
+    const isOpen = card.classList.contains("open");
+
+    card.classList.toggle("open");
+
+    const learnMoreBtn = card.querySelector(".learn-more");
+
+    if (!isOpen) {
+      learnMoreBtn.innerText = "Show Less";
+    } else {
+      learnMoreBtn.innerText = "Learn More";
+    }
+  }
+</script>
+        </div>
+      </article>
+
     </div>
   </div>
-</footer>
-      <script>
-  const hamburger = document.getElementById("hamburger");
-  const navLinks = document.getElementById("nav-links");
+</section>
 
-  hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("open");
-  });
-</script>
-  <script src="../matrix.js"></script>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 Pennock Systems. AI-powered business systems.</span>
+      <span>Automation · AI assistants · Web experiences · Operations</span>
+    </div>
+  </footer>
 </body>
 </html>
