@@ -1,137 +1,106 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contact Us | Pennock Systems</title>
-  <link rel="stylesheet" href="../style.css" />
-  <link rel="stylesheet" href="../services/services.css" />
-  <link rel="stylesheet" href="contact.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="icon" href="../images/ChatGPT Image May 2, 2025, 07_48_05 PM.png" type="image/png" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    .success-message {
-      display: none;
-      margin-top: 15px;
-      padding: 10px;
-      background-color: #d4edda;
-      color: #155724;
-      border: 1px solid #c3e6cb;
-      border-radius: 5px;
-      font-size: 0.9rem;
-    }
-  </style>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="contact.css">
+  <link rel="icon" href="Logo.png" type="image/png" />
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="nav-left">
-        <a href="/" class="logo-link">
-          <img src="/images/ChatGPT Image May 2, 2025, 07_48_05 PM.png" alt="Pennock Systems Logo" class="logo-img" />
-        </a>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand" aria-label="Pennock Systems home">
+        <img class="brand-logo" src="logo.png" alt="Pennock Systems logo">
+        <span>Pennock Systems</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="how.html">How It Works</a>
+        <a href="career.html">Careers</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="button secondary" href="login.html">Login</a>
+        <a class="button primary" href="contact.html">Let's Chat</a>
       </div>
-  
-            <!-- Hamburger -->
-        <div class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
+    </div>
+  </header>
+
+  <main class="contact-main">
+    <div class="container grid-contact">
+      
+      <div class="contact-form-container">
+        <h1>Let's build something scalable</h1>
+        <p class="subtitle">Tell us about your operational bottlenecks, and we'll map out an autonomous agent strategy tailored to your data infrastructure.</p>
+        
+        <form id="contact-form" action="https://formspree.io/f/xrblkawd" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" required placeholder="Alex Rivera">
+            </div>
+            <div class="form-group">
+              <label for="email">Work Email</label>
+              <input type="email" id="email" name="email" required placeholder="alex@company.com">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="company">Company Name</label>
+            <input type="text" id="company" name="company" placeholder="Acme Logistics Corp">
+          </div>
+
+          <div class="form-group">
+            <label for="use-case">Primary Use Case</label>
+            <select id="use-case" name="use-case">
+              <option value="" disabled selected>Select an option</option>
+              <option value="data-pipelines">Automating Data Pipelines</option>
+              <option value="agent-orchestration">Custom AI Agent Orchestration</option>
+              <option value="system-integration">API & Tool Integration</option>
+              <option value="other">Other Enterprise Automation</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">How can we help you?</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Describe the workflow or systems you want to automate..."></textarea>
+          </div>
+
+          <button type="submit" class="button primary submit-btn">Submit Inquiry</button>
+        </form>
+      </div>
+
+      <div class="contact-sidebar">
+        <div class="sidebar-card">
+          <h3>Enterprise Ready</h3>
+          <p>We take security and system architectural integrity seriously.</p>
+          <ul class="trust-list">
+            <li>🔒 End-to-end data encryption</li>
+            <li>⚡ 99.9% Orchestrator uptime SLA</li>
+            <li>🛡️ Strict data isolation policies</li>
+          </ul>
         </div>
-          
-            <ul class="nav-links" id="nav-links">
-              <li><a href="/services">Services</a></li>  
-              <li><a href="/work">Work</a></li>
-              <li><a href="/about">About Us</a></li>
-              <li><a href="/contact">Contact</a></li>
-            </ul>
-          </nav>
 
-  <!-- Hero Section -->
-  <section class="services-hero">
-    <canvas id="matrix-canvas"></canvas>
-  
-    <div class="hero-content glass-box">
-      <h1 id="typing-header"></h1>
-      <p id="typing-sub"></p>
+        <div class="sidebar-card status-card">
+          <div class="status-indicator">
+            <span class="pulse-dot"></span>
+            <span>All Systems Operational</span>
+          </div>
+          <p class="status-details">Agent networks running optimally across all nodes.</p>
+        </div>
+      </div>
+
     </div>
-  </section>
-
-  <!-- Contact Form Section -->
-<section class="contact-form-section">
-  <div class="form-container glass-box">
-    <h2>Get in Touch</h2>
-    <p>Have a question or want to work with us? Fill out the form below and we’ll get back to you shortly.</p>
-    
-    <form id="contact-form" action="https://formspree.io/f/xrblkawd" method="POST">
-      <div class="form-group">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" required />
-      </div>
-      <div class="form-group">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" required />
-      </div>
-      <div class="form-group">
-        <label for="inquiry">Service Subject</label>
-        <input type="text" id="inquiry" name="inquiry" required />
-      </div>
-      <div class="form-group">
-        <label for="message">Your Message</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-      </div>
-      <button type="submit" class="submit-button">Send Message</button>
-      <div id="success-message" class="success-message">Message sent successfully! We’ll be in touch soon.</div>
-    </form>
-  </div>
-</section>
- 
-  <!-- Footer -->
-<footer class="site-footer">
-  <div class="footer-container">
-    <p>&copy; 2026 Pennock Systems. All rights reserved.</p>
-    <div class="footer-socials">
-      <a href="https://www.instagram.com/pennocksystems" target="_blank" aria-label="Instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://twitter.com/pennocksystems" target="_blank" aria-label="Twitter">
-        <i class="fab fa-twitter"></i>
-      </a>
+  </main>
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 Pennock Systems. AI-powered business systems.</span>
+      <span>Automation · AI assistants · Web experiences · Operations</span>
     </div>
-  </div>
-</footer>
-<script>
-  const hamburger = document.getElementById("hamburger");
-  const navLinks = document.getElementById("nav-links");
-
-  hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("open");
-  });
-
-  // Form submission handling
-  const form = document.getElementById("contact-form");
-  const successMessage = document.getElementById("success-message");
-
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const formData = new FormData(form);
-
-    const response = await fetch(form.action, {
-      method: form.method,
-      body: formData,
-      headers: { 'Accept': 'application/json' }
-    });
-
-    if (response.ok) {
-      form.reset();
-      successMessage.style.display = "block";
-    } else {
-      alert("Oops! There was a problem submitting your form.");
-    }
-  });
-</script>
-
-  <script src="contact.js"></script>
+  </footer>
 </body>
 </html>
-
