@@ -1,128 +1,246 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us | Pennock Systems</title>
-  <link rel="stylesheet" href="../style.css" />
-  <link rel="stylesheet" href="../services/services.css" />
-  <link rel="stylesheet" href="about.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="icon" href="../images/ChatGPT Image May 2, 2025, 07_48_05 PM.png" type="image/png" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How It Works | Pennock Systems</title>
+  <meta name="description" content="Join Pennock Systems and help build AI assistants, automation, and modern web systems for growing businesses. View open roles and send us your resume.">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="how.css">
+  <link rel="icon" href="Logo.png" type="image/png" />
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="nav-left">
-        <a href="/" class="logo-link">
-          <img src="/images/ChatGPT Image May 2, 2025, 07_48_05 PM.png" alt="Pennock Systems Logo" class="logo-img" />
-        </a>
-      </div>
-        
-            <!-- Hamburger -->
-        <div class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-          
-            <ul class="nav-links" id="nav-links">
-              <li><a href="/services">Services</a></li>  
-              <li><a href="/work">Work</a></li>
-              <li><a href="/about">About Us</a></li>
-              <li><a href="/contact">Contact</a></li>
-            </ul>
-          </nav>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand" aria-label="Pennock Systems home">
+        <img class="brand-logo" src="logo.png" alt="Pennock Systems logo">
+        <span>Pennock Systems</span>
+      </a>
 
-  <!-- Hero Section -->
-  <section class="services-hero">
-    <canvas id="matrix-canvas"></canvas>
-  
-    <div class="hero-content glass-box">
-      <h1 id="typing-header"></h1>
-      <p id="typing-sub"></p>
+      <nav class="nav-links" aria-label="Primary navigation">
+      <a href="how.html">How It Works</a>
+      <a href="career.html">Careers</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+      <div class="nav-actions">
+        <a class="button secondary" href="login.html">Login</a>
+        <a class="button primary" href="contact.html">Let's Chat</a>
+      </div>
     </div>
-  </section>
-  
-  <section class="about-overview">
+  </header>
+
+  <main>
+
+<body>
+
+  <!-- HERO -->
+  <section class="how-hero">
     <div class="container">
-      <div class="about-box">
-        <h2>Our Mission</h2>
-        <p>At Pennock Systems, our mission is to craft client‑focused digital solutions that scale with your business. Every chatbot and website we create is built for impact — designed to drive growth, streamline operations, and forge meaningful connections between you and your audience.</p>
-      </div>
-  
-      <div class="about-box">
-        <h2>Who We Are</h2>
-        <p>Founded by a team passionate about technology and transformation, Pennock Systems blends technical excellence with a human-first approach. Whether you're a small business owner or a rapidly scaling company, our team is here to help you automate, streamline, and evolve.</p>
-      </div>
-  
-      <div class="about-box">
-        <h2>What Sets Us Apart</h2>
-        <ul>
-          <strong>Customization:</strong> Every chatbot and site we build is tailored to our client’s voice and goals.<br>
-          <strong>Transparency:</strong> We value open communication, honest feedback, and collaborative progress.<br>
-          <strong>Innovation:</strong> We stay at the forefront of AI, automation, and UX design to keep your business ahead of the curve.<br>
-        </ul>
-      </div>
+
+      <h1>How Agent Orchestration Works</h1>
+
+      <p>
+        We design systems where AI agents, APIs, and business tools work together as one coordinated layer—
+        continuously executing, improving, and adapting to real operational data.
+      </p>
+
     </div>
   </section>
-  
-<section class="process-section">
-  <h2>Our Process</h2>
-  <div class="process-steps">
-    <div class="process-step">
-      <div class="step-icon">1</div>
-      <h3>Discover</h3>
-      <p>We dive deep to understand your business, audience, and goals to craft a tailored strategy.</p>
+
+<!-- SECTION 1 -->
+<section class="how-section">
+  <div class="container grid">
+
+    <div class="text">
+      <h2>1. Upload Your Information</h2>
+
+      <p>
+        Upload documents, connect your tools, or share the information
+        you want your AI system to work with.
+      </p>
+
+      <div class="card-list">
+        <div class="mini-card">Upload files</div>
+        <div class="mini-card">Connect your software</div>
+        <div class="mini-card">Share your business data</div>
+      </div>
     </div>
-    <div class="process-step">
-      <div class="step-icon">2</div>
-      <h3>Design</h3>
-      <p>We create user‑friendly, scalable digital solutions with your brand and vision in mind.</p>
-    </div>
-    <div class="process-step">
-      <div class="step-icon">3</div>
-      <h3>Build</h3>
-      <p>We develop high‑impact chatbots and websites optimized for performance and growth.</p>
-    </div>
-    <div class="process-step">
-      <div class="step-icon">4</div>
-      <h3>Scale</h3>
-      <p>We support your growth with updates, analytics, and tools to keep your business ahead.</p>
-    </div>
+
+    <div class="visual">
+  <div class="diagram-box dropzone" id="upload-widget">
+    <div class="upload-icon">📁</div>
+    <p id="upload-status">Click to simulate data injection</p>
+    <div class="stream-container" id="stream-container"></div>
+  </div>
+</div>
+
   </div>
 </section>
 
-<!-- CTA Section -->
-<section class="services-cta">
-    <h2>Want to Join the Team?</h2>
-    <p>We’re always looking for talented, driven individuals to grow with us.</p>
-    <a href="contact.html" class="cta-button">Contact Us</a>
-  </section>  
+  <!-- SECTION 2 -->
+<section class="how-section alt">
+  <div class="container grid">
 
-  <!-- Footer -->
-<footer class="site-footer">
-  <div class="footer-container">
-    <p>&copy; 2026 Pennock Systems. All rights reserved.</p>
-    <div class="footer-socials">
-      <a href="https://www.instagram.com/pennocksystems" target="_blank" aria-label="Instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://twitter.com/pennocksystems" target="_blank" aria-label="Twitter">
-        <i class="fab fa-twitter"></i>
-      </a>
+    <div class="visual">
+  <div class="diagram-box terminal-box">
+    <div class="terminal-header">
+      <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+      <span class="terminal-title">agent_orchestrator.log</span>
     </div>
+    <div class="terminal-body" id="terminal-logs">
+      </div>
   </div>
-</footer>
-    <script>
-  const hamburger = document.getElementById("hamburger");
-  const navLinks = document.getElementById("nav-links");
+</div>
 
-  hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("open");
-  });
-</script>
-  <script src="about.js"></script>
+    <div class="text">
+      <h2>2. AI Processes Your Information</h2>
+
+      <p>
+        Your AI analyzes the information, identifies patterns,
+        and follows your business rules to complete tasks automatically.
+      </p>
+
+      <div class="card-list">
+        <div class="mini-card">Analyzes your data</div>
+        <div class="mini-card">Organizes information</div>
+        <div class="mini-card">Executes workflows</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- SECTION 3 -->
+<section class="how-section">
+  <div class="container grid">
+
+    <div class="text">
+      <h2>3. Get Results</h2>
+
+      <p>
+        Receive actionable insights, completed tasks, and automated
+        workflows that help your business move faster and operate more efficiently.
+      </p>
+
+      <div class="card-list">
+        <div class="mini-card">Instant insights</div>
+        <div class="mini-card">Automated actions</div>
+        <div class="mini-card">More time for your team</div>
+      </div>
+    </div>
+
+    <div class="visual">
+  <div class="diagram-box results-box">
+    <div class="metric-card">
+      <span class="metric-label">Tasks Executed</span>
+      <span class="metric-value" id="counter-tasks">0</span>
+    </div>
+    <div class="metric-card">
+      <span class="metric-label">Efficiency Gain</span>
+      <span class="metric-value" id="counter-efficiency">0%</span>
+    </div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- CTA -->
+  <section class="how-cta">
+    <div class="container">
+
+      <h2>Build systems that actually think and execute.</h2>
+
+      <p>
+        We don’t build isolated automations—we build coordinated AI systems that operate as infrastructure.
+      </p>
+
+    </div>
+  </section>
+
 </body>
+<script>
+  // --- Section 1: Upload Particle Simulation ---
+  const widget = document.getElementById('upload-widget');
+  const streamContainer = document.getElementById('stream-container');
+  const dataTypes = ['invoice.pdf', 'api_payload.json', 'user_profile.db', 'crm_webhook'];
+
+  widget.addEventListener('click', () => {
+    document.getElementById('upload-status').innerText = "Injecting data streams...";
+    for (let i = 0; i < 5; i++) {
+      setTimeout(() => {
+        const particle = document.createElement('div');
+        particle.className = 'data-particle';
+        particle.innerText = dataTypes[Math.floor(Math.random() * dataTypes.length)];
+        particle.style.left = `${Math.random() * 60 + 20}%`;
+        streamContainer.appendChild(particle);
+        setTimeout(() => particle.remove(), 1500);
+      }, i * 300);
+    }
+    setTimeout(() => { document.getElementById('upload-status').innerText = "Click to simulate data injection"; }, 2000);
+  });
+
+  // --- Section 2: Terminal Output Loop ---
+  const logs = [
+    "[INFO] Orchestrator listening on port 443...",
+    "[AGENT] Routing payload to DataExtractor...",
+    "[PARSE] Extracted key tokens in 42ms.",
+    "[AGENT] Deploying LogicValidator...",
+    "[VALID] Rules match perfectly.",
+    "[SYSTEM] Triggering CRM webhook updates...",
+    "[SUCCESS] Pipeline executed successfully."
+  ];
+  const terminal = document.getElementById('terminal-logs');
+  let logIndex = 0;
+
+  function printLog() {
+    const line = document.createElement('div');
+    line.className = 'log-line';
+    line.innerText = logs[logIndex];
+    if (logs[logIndex].includes('SUCCESS')) line.style.color = '#10b981';
+    if (logs[logIndex].includes('AGENT')) line.style.color = '#a855f7';
+    
+    terminal.appendChild(line);
+    if (terminal.childNodes.length > 6) {
+      terminal.removeChild(terminal.firstChild);
+    }
+    
+    logIndex = (logIndex + 1) % logs.length;
+    setTimeout(printLog, Math.random() * 800 + 800);
+  }
+  printLog();
+
+  // --- Section 3: Live Results Tickers ---
+  function animateValue(obj, start, end, duration, suffix = "") {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      obj.innerHTML = Math.floor(progress * (end - start) + start) + suffix;
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+    window.requestAnimationFrame(step);
+  }
+
+  // Uses IntersectionObserver to trigger counter when it scrolls into view
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateValue(document.getElementById("counter-tasks"), 0, 1420, 2000);
+        animateValue(document.getElementById("counter-efficiency"), 0, 87, 2000, "%");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  observer.observe(document.querySelector('.results-box'));
+</script>
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 Pennock Systems. AI-powered business systems.</span>
+      <span>Automation · AI assistants · Web experiences · Operations</span>
+    </div>
+  </footer>
 </html>
