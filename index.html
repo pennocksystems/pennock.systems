@@ -1,86 +1,284 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pennock Systems</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="icon" href="images/ChatGPT Image May 2, 2025, 07_48_05 PM.png" type="image/png" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pennock Systems | AI Systems Built to Grow Your Business</title>
+  <meta name="description" content="Pennock Systems builds custom AI assistants, automation, and modern web systems that help businesses save time, convert more leads, and scale operations.">
+  <link rel="stylesheet" href="index.css">
+  <link rel="icon" href="Logo.png" type="image/png" />
 </head>
 <body>
-    <canvas id="matrix-canvas"></canvas>
-  
-    <header class="hero">
-      <div class="container">
-        <nav class="navbar">
-            <div class="nav-left">
-              <div class="logo">Pennock Systems</div>
-            </div>
-                    
-            <!-- Hamburger -->
-        <div class="hamburger" id="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-          
-            <ul class="nav-links" id="nav-links">
-              <li><a href="/services">Services</a></li>  
-              <li><a href="/work">Work</a></li>
-              <li><a href="/about">About Us</a></li>
-              <li><a href="/contact">Contact</a></li>
-            </ul>
-          </nav>        
-            
-        <div class="hero-content">
-          <img src="images/ChatGPT Image May 2, 2025, 07_48_05 PM.png" alt="Pennock Systems Logo" class="hero-logo" />
-          <h1 class="typewriter">
-            <span id="typing-text"></span>
-          </h1>
-          <h1><span class="highlight">Innovative AI Solutions</span> & Dynamic Web Experiences</h1>
-          <p>Streamline your business operations with cutting-edge automation.</p>
-          <a href="/contact" class="btn">Request a Demo</a>
-          <!--Maybe insert short video here-->
+  <header class="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand" aria-label="Pennock Systems home">
+      <img class="brand-logo" src="logo.png" alt="Pennock Systems logo">
+      <span>Pennock Systems</span>
+    </a>
 
-  <!-- New containers -->
-  <div class="container-row">
-    <div class="info-box">
-      <h3><span class="typing-h3" data-text="Why Choose Us?"></span></h3>
-      <p>We build smart, reliable chatbots, and dynamic web experiences that streamline your operations, engage your customers, and grow with your business. Trusted by small businesses to deliver real results.</p>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="how.html">How It Works</a>
+      <a href="career.html">Careers</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a class="button secondary" href="login.html">Login</a>
+      <a class="button primary" href="contact.html">Let's Chat</a>
     </div>
-    <div class="info-box">
-      <h3><span class="typing-h3" data-text="Our Process"></span></h3>
-      <p>We follow a simple, effective process: Discover your needs, design a tailored chatbot and/or website, develop with precision, and deliver a solution that fits seamlessly into your workflow.</p>
+  </div>
+</header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow"><span class="pulse-dot"></span> Premium AI systems for growing companies</span>
+          <h1>AI Systems Built to Grow Your Business</h1>
+          <p>Custom AI assistants, intelligent automation, and modern web experiences designed to save time, increase revenue, and eliminate repetitive work.</p>
+          <div class="hero-actions">
+            <a class="button secondary" href="solutions.html">Architecture Overview</a>
+          </div>
+          <div class="hero-proof" aria-label="Business impact metrics">
+            <div class="metric"><strong>30+</strong><span>systems, assistants, and workflow prototypes delivered</span></div>
+            <div class="metric"><strong>5+</strong><span>core industries supported with practical automation</span></div>
+            <div class="metric"><strong>24/7</strong><span>customer response coverage without extra staffing</span></div>
+          </div>
+        </div>
+
+        <div class="workflow ops-console" aria-label="AI operations console visualization">
+          <div class="workflow-header">
+            <span>AI operations console</span>
+          </div>
+          <div class="console-screen">
+            <div class="console-summary">
+              <span>Today</span>
+              <strong>12 active automations</strong>
+              <p>Customer intake, routing, scheduling, and follow-up working in the background.</p>
+            </div>
+            <div class="console-list">
+              <div class="console-row">
+                <span class="row-status"></span>
+                <div>
+                  <strong>New inquiry qualified</strong>
+                  <p>Roofing lead routed to estimate workflow</p>
+                </div>
+                <em>Now</em>
+              </div>
+              <div class="console-row">
+                <span class="row-status"></span>
+                <div>
+                  <strong>CRM record updated</strong>
+                  <p>Contact details, source, and urgency saved</p>
+                </div>
+                <em>2m</em>
+              </div>
+              <div class="console-row">
+                <span class="row-status"></span>
+                <div>
+                  <strong>Appointment confirmed</strong>
+                  <p>Calendar booked and confirmation sent</p>
+                </div>
+                <em>4m</em>
+              </div>
+            </div>
+            <div class="console-metrics" aria-label="Automation outcomes">
+              <div><strong>24/7</strong><span>response</span></div>
+              <div><strong>3.2x</strong><span>faster intake</span></div>
+              <div><strong>0</strong><span>manual handoffs</span></div>
+            </div>
+          </div>
+          <div class="workflow-note">
+            <span><strong>Simple, visible operations</strong> without overwhelming the customer experience.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="hero-journey" aria-label="Linear AI automation journey">
+          <div class="journey-step">
+            <div class="stage-icon">01</div>
+            <h3>Inquiry</h3>
+            <p>A customer asks for help, pricing, or availability.</p>
+          </div>
+          <div class="journey-step">
+            <div class="stage-icon">02</div>
+            <h3>Identification</h3>
+            <p>The AI identifies intent, urgency, and missing details.</p>
+          </div>
+          <div class="journey-step">
+            <div class="stage-icon">03</div>
+            <h3>Update</h3>
+            <p>CRM records, notes, and lead status are captured.</p>
+          </div>
+          <div class="journey-step">
+            <div class="stage-icon">04</div>
+            <h3>Action</h3>
+            <p>With instruction, your agent determines the best course of action.</p>
+          </div>
+          <div class="journey-step">
+            <div class="stage-icon">05</div>
+            <h3>Follow Up</h3>
+            <p>Confirmation, reminders, and handoffs are sent.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section class="trust">
+  <div class="container">
+
+    <div class="section-head">
+      <h2>Trusted by Growing Businesses</h2>
+      <p>Smart technology that reduces manual work, improves customer experience, and drives growth.</p>
     </div>
-  </div>  
+
+    
+    <div class="logo-carousel" aria-label="Client and industry logos">
+        <div class="logo-carousel" aria-label="Client and industry logos">
+  <div class="logo-track">
+
+    <div class="logo-group">
+      <div class="client-logo">Leading Auto Recycling Organization</div>
+      <div class="client-logo">High-Growth Consulting Startup</div>
+      <div class="client-logo">United States Veteran Support & Resource Platform</div>
+      <div class="client-logo">Top 5 Framing Company in Northern California</div>
+      <div class="client-logo">Baseball Analytics Platform Designed for Top Draft Prospects</div>
+      <div class="client-logo">Northern California Agriculture Company</div>
+    </div>
+
+    <div class="logo-group" aria-hidden="true">
+      <div class="client-logo">Leading Auto Recycling Organization</div>
+      <div class="client-logo">High-Growth Consulting Startup</div>
+      <div class="client-logo">United States Veteran Support & Resource Platform</div>
+      <div class="client-logo">Top 5 Framing Company in Northern California</div>
+      <div class="client-logo">Baseball Analytics Platform Designed for Top Draft Prospects</div>
+    </div>
   </div>
 </div>
+</div>
+        <div class="trust-grid">
+          <div class="quote">
+            <p>"Before working with Pennock Systems, AI felt overwhelming. They helped us understand the technology, identify meaningful use cases, and confidently integrate it into our operations."</p>
+            <span><strong>Operations lead</strong>, Northern California Agriculture Company</span>
+          </div>
+          <div class="info-card"><strong>+47%</strong><span>improvement in self-service resolution ~ IBM Institute for Business Value</span></div>
+          <div class="info-card"><strong>3x ROI</strong><span>on average when it comes to strategic AI ~ McKinsey & Company</span></div>
+          <div class="info-card"><strong>122 hours</strong><span>saved per employee annually through AI-assisted workflows ~ Google AI Works Report</span></div>
+        </div>
+      </div>
+    </section>
 
-    </header>
-<footer class="site-footer">
-  <div class="footer-container">
-    <p>&copy; 2026 Pennock Systems. All rights reserved.</p>
-    <div class="footer-socials">
-      <a href="https://www.instagram.com/pennocksystems" target="_blank" aria-label="Instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://twitter.com/pennocksystems" target="_blank" aria-label="Twitter">
-        <i class="fab fa-twitter"></i>
-      </a>
+    <section id="solutions">
+      <div class="container">
+        <div class="section-head">
+          <h2>AI Solutions Tailored To Your Business</h2>
+          <p>Every system is designed around the work that slows growth: missed leads, manual updates, scattered documentation, and repetitive communication.</p>
+        </div>
+        <div class="solution-grid">
+          <article class="solution-card">
+            <div class="card-kicker">Customer growth</div>
+            <h3>AI Assistants</h3>
+            <p>Convert more inquiries with intelligent assistants that respond, qualify, schedule, and support customers around the clock.</p>
+            <ul class="feature-list">
+              <li>Customer engagement</li>
+              <li>Lead qualification</li>
+              <li>Appointment scheduling</li>
+              <li>Multilingual support</li>
+            </ul>
+          </article>
+          <article class="solution-card">
+            <div class="card-kicker">Operational speed</div>
+            <h3>Business Automation</h3>
+            <p>Connect the systems your team already uses so repetitive work moves automatically and nothing falls through the cracks.</p>
+            <ul class="feature-list">
+              <li>CRM updates</li>
+              <li>Email automation</li>
+              <li>Data processing</li>
+              <li>Workflow integrations</li>
+            </ul>
+          </article>
+          <article class="solution-card">
+            <div class="card-kicker">Modern acquisition</div>
+            <h3>Websites</h3>
+            <p>Launch premium web experiences that generate demand, capture leads, and connect directly into your AI and automation stack.</p>
+            <ul class="feature-list">
+              <li>Responsive design</li>
+              <li>SEO optimization</li>
+              <li>AI integration</li>
+              <li>Lead capture systems</li>
+            </ul>
+          </article>
+          <article class="solution-card">
+            <div class="card-kicker">Team leverage</div>
+            <h3>AI Knowledge Platforms</h3>
+            <p>Give employees a reliable knowledge layer for procedures, policies, onboarding, and consistent process guidance.</p>
+            <ul class="feature-list">
+              <li>SOP retrieval</li>
+              <li>Internal documentation</li>
+              <li>Employee onboarding</li>
+              <li>Process guidance</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="demo" id="demo">
+      <div class="container">
+        <div class="section-head">
+          <h2>See AI In Action</h2>
+          <p>Watch a Gemini-style prompt experience show how a brewery can use AI to qualify leads, automate follow-up, and keep operations moving.</p>
+        </div>
+        <div class="gemini-demo" aria-label="Gemini-style brewery AI prompt demo">
+          <div class="gemini-card">
+            <div class="gemini-topbar">
+              <span></span><span></span><span></span>
+              <strong>Brewery AI workspace</strong>
+            </div>
+            <div class="gemini-prompt-area">
+              <div class="prompt-label">Prompt</div>
+              <div class="gemini-search">
+                <p aria-live="polite"><span id="typedPrompt"></span><span class="typing-cursor" aria-hidden="true"></span></p>
+              </div>
+              <div class="prompt-chips" aria-label="Prompt examples">
+                <button class="prompt-chip active" data-demo="brewery" type="button">Private party inquiry</button>
+                <button class="prompt-chip" data-demo="events" type="button">Corporate happy hour</button>
+                <button class="prompt-chip" data-demo="membership" type="button">Beer club signup</button>
+                <button class="prompt-chip" data-demo="distribution" type="button">Wholesale keg lead</button>
+              </div>
+            </div>
+            <div class="gemini-answer" id="geminiAnswer" aria-live="polite"></div>
+          </div>
+          <aside class="system-panel gemini-actions">
+            <h3 id="demo-title">Brewery Event Assistant</h3>
+            <div class="event-list" id="event-list"></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta" id="contact">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <h2>Ready To Put AI To Work?</h2>
+            <p>Let's identify where automation and AI can create the biggest impact in your business.</p>
+              <a class="button primary" href="contact.html">Book a Consultation</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 Pennock Systems. AI-powered business systems.</span>
+      <span>Automation · AI assistants · Web experiences · Operations</span>
     </div>
-  </div>
-</footer>
-    <script>
-  const hamburger = document.getElementById("hamburger");
-  const navLinks = document.getElementById("nav-links");
+  </footer>
 
-  hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("open");
-  });
-</script>
-  </body>
-<script src="script.js"></script>
+  <script src="index.js"></script>
+</body>
 </html>
-
