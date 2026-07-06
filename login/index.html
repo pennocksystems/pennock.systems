@@ -1,1 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login | Pennock Systems</title>
+  <meta name="description" content="Sign in to your Pennock Systems account to manage your AI assistants, automations, and dashboards.">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="login.css">
+  <link rel="icon" href="Logo.png" type="image/png" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="brand" aria-label="Pennock Systems home">
+        <img class="brand-logo" src="logo.png" alt="Pennock Systems logo">
+        <span>Pennock Systems</span>
+      </a>
 
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="how.html">How It Works</a>
+      <a href="career.html">Careers</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+      <div class="nav-actions">
+        <a class="button secondary active" href="login.html" aria-current="page">Login</a>
+        <a class="button primary" href="contact.html">Let's Chat</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="login-section">
+      <div class="container login-grid">
+
+        <div class="login-intro">
+          <span class="eyebrow"><span class="pulse-dot"></span> Client access</span>
+          <h1>Welcome back</h1>
+          <p>Sign in to monitor your AI assistants, review automation activity, and manage your account in one place.</p>
+
+          <div class="login-points">
+            <div class="login-point">
+              <div class="point-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                  <circle cx="12" cy="12" r="3.4" stroke="currentColor" stroke-width="1.6"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Live automation status</strong>
+                <span>See what your assistants are doing right now.</span>
+              </div>
+            </div>
+
+            <div class="login-point">
+              <div class="point-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 19V6a2 2 0 0 1 2-2h9l5 5v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                  <path d="M9 14h6M9 10.5h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Reports &amp; insights</strong>
+                <span>Track results across every workflow.</span>
+              </div>
+            </div>
+
+            <div class="login-point">
+              <div class="point-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 3 4 6.5v5C4 16.5 7.5 20 12 21c4.5-1 8-4.5 8-9.5v-5L12 3Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                  <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Secure by design</strong>
+                <span>Your account and data stay protected.</span>
+              </div>
+            </div>
+
+            <div class="login-point">
+              <div class="point-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-1.9 5.4L21 21l-4.1-1.1A8.5 8.5 0 1 1 21 11.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Need help?</strong>
+                <span>Reach your team directly from your dashboard.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="login-card">
+          <div class="login-card-top">
+            <span></span><span></span><span></span>
+            <strong>Secure sign in</strong>
+          </div>
+
+          <div class="login-card-body">
+            <h2>Sign in to your account</h2>
+            <p class="login-subtitle">Enter your details to access your dashboard.</p>
+
+            <form class="login-form" autocomplete="on">
+              <div class="field">
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="email" placeholder="you@company.com" autocomplete="email" required>
+              </div>
+
+              <div class="field">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" autocomplete="current-password" required>
+              </div>
+
+              <div class="field-row">
+                <label class="checkbox">
+                  <input type="checkbox" name="remember">
+                  <span>Remember me</span>
+                </label>
+                <a class="forgot-link" href="#">Forgot password?</a>
+              </div>
+
+              <button type="submit" class="button primary login-submit">Sign In</button>
+            </form>
+
+            <div class="divider"><span>or</span></div>
+
+            <p class="signup-note">Don't have an account? <a href="contact.html">Contact our team</a> to get started.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 Pennock Systems. AI-powered business systems.</span>
+      <span>Automation · AI assistants · Web experiences · Operations</span>
+    </div>
+  </footer>
+</body>
+</html>
