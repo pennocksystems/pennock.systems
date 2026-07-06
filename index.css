@@ -2266,23 +2266,26 @@ section + section {
   display: none;
 }
 
-/* 2. When the screen width drops to mobile sizes (under 768px) */
+/* 2. Unified Mobile Styles (Applied together on screens under 768px wide) */
 @media (max-width: 767px) {
   
-  /* Hide heavy desktop-first components */
+  /* Hides all unwanted desktop elements cleanly in one shot */
   .hero-desktop-graphics, 
+  .complex-grid-layouts,
   .demo, 
-  .complex-grid-layouts {
+  .hero-journey, 
+  .trust, 
+  .final-cta {
     display: none !important;
   }
 
-  /* Show our unified mobile-friendly page */
+  /* Show and pad our unified mobile-friendly layout */
   .mobile-only-layout {
-    display: block;
+    display: block !important;
     padding: 15px;
   }
 
-  /* Style the mobile layout sections cleanly */
+  /* Style the mobile layout blocks cleanly */
   .mobile-section {
     padding: 40px 20px;
     border-radius: 12px;
@@ -2299,27 +2302,6 @@ section + section {
     color: #a855f7; /* Your accent color */
     font-weight: bold;
     text-decoration: none;
-  }
-}
-
-@media (max-width: 767px) {
-  
-  /* 1. Hide the heavy desktop-first components we decided on earlier */
-  .demo {
-    display: none !important;
-  }
-
-  /* 2. Hide the specific sections you just mentioned */
-  .hero-journey,          /* Hides the 01-05 linear journey steps container */
-  .trust-section,        /* Target your trust/logo cloud section class name */
-  .final-cta-section {   /* Target your bottom CTA section class name */
-    display: none !important;
-  }
-
-  /* 3. Show our unified mobile-friendly page layout */
-  .mobile-only-layout {
-    display: block;
-    padding: 15px;
   }
 }
 
