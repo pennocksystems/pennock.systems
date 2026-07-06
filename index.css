@@ -2276,35 +2276,53 @@ section + section {
   .hero-journey, 
   .trust, 
   .final-cta,
-  .brand span {            /* <-- Bundled into the list correctly now! */
+  .brand span {            
     display: none !important;
   }
 
-  /* Ensures the header layout stays clean and spaces items out beautifully */
+  /* 1. CENTERS THE BUTTONS AND ANCHORS THE LOGO TO THE LEFT */
   .nav-inner {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Centers the buttons in the exact middle */
     align-items: center;
+    position: relative;      /* Provides a coordinate anchor point for the logo */
     width: 100%;
+    padding: 10px 0;
+  }
+
+  .brand {
+    position: absolute;      /* Pulls the logo out of the standard flex alignment layout */
+    left: 15px;              /* Forces it to stick to the left boundary edge */
+    top: 50%;
+    transform: translateY(-50%); /* Centers the icon vertically */
+  }
+
+  .nav-actions {
+    display: flex !important; /* Forces your main action container to stay visible */
+    gap: 10px;               /* Clean spacing gaps between your two navigation buttons */
+  }
+
+  /* Hides the desktop link navigation layer on mobile viewports */
+  .nav-links {
+    display: none !important;
   }
   
-  /* This targets the very first section inside your mobile layout and shuts it off */
+  /* --- REST OF YOUR MOBILE CONTENT STYLES CONTINUE BELOW --- */
+  
   .mobile-only-layout .mobile-section:first-child {
     display: none !important;
   }
 
-  /* Show and pad our unified mobile-friendly layout */
   .mobile-only-layout {
     display: block !important;
     padding: 15px;
   }
 
-  /* CENTERS ALL MOBILE CONTENT & BUTTONS */
   .mobile-section {
     display: flex;
     flex-direction: column;
-    align-items: center;    /* Centers items horizontally */
-    text-align: center;     /* Centers text lines */
+    align-items: center;    
+    text-align: center;     
     padding: 40px 20px;
     border-radius: 12px;
     margin-bottom: 20px;
@@ -2314,17 +2332,15 @@ section + section {
     background-color: #f9fafb; 
   }
 
-  /* Centers the buttons/links and gives them clean spacing */
   .mobile-link {
     display: inline-block;
     margin-top: 15px;
-    color: #a855f7; /* Your accent color */
+    color: #a855f7; 
     font-weight: bold;
     text-decoration: none;
     text-align: center;
   }
   
-  /* If you want the quick contact form elements centered too */
   .mobile-contact-form {
     display: flex;
     flex-direction: column;
