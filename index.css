@@ -2269,14 +2269,14 @@ section + section {
 /* 2. Unified Mobile Styles (Applied together on screens under 768px wide) */
 @media (max-width: 767px) {
   
-  /* Hides unwanted desktop elements */
+  /* Hides unwanted desktop elements and the logo text cleanly */
   .hero-desktop-graphics, 
   .complex-grid-layouts,
   .demo, 
   .hero-journey, 
   .trust, 
-  .final-cta {
-  .brand span {          
+  .final-cta,
+  .brand span {            /* <-- Bundled into the list correctly now! */
     display: none !important;
   }
 
@@ -2287,7 +2287,7 @@ section + section {
     align-items: center;
     width: 100%;
   }
-  /* 1. HIDES THE SPECIFIC TEXT SECTION YOU MENTIONED */
+  
   /* This targets the very first section inside your mobile layout and shuts it off */
   .mobile-only-layout .mobile-section:first-child {
     display: none !important;
@@ -2299,7 +2299,7 @@ section + section {
     padding: 15px;
   }
 
-  /* 2. CENTERS ALL MOBILE CONTENT & BUTTONS */
+  /* CENTERS ALL MOBILE CONTENT & BUTTONS */
   .mobile-section {
     display: flex;
     flex-direction: column;
