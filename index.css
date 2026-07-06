@@ -2348,5 +2348,95 @@ section + section {
     width: 100%;
     gap: 10px;
   }
+/* --- UPGRADED MOBILE SECTION TYPOGRAPHY & CARDS --- */
+  
+  .mobile-kicker {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    color: #a855f7; /* Your accent color */
+    margin-bottom: 8px;
+  }
+  
+  .mobile-subhead {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 24px;
+    max-width: 90%;
+  }
+
+  /* 1. Timeline Layout for How It Works Section */
+  .mobile-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    text-align: left; /* Changes timeline boxes back to left align for easier readability */
+  }
+
+  .timeline-card {
+    display: flex;
+    gap: 16px;
+    background-color: #ffffff;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    border: 1px solid #f1f5f9;
+  }
+
+  .timeline-num {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #a855f7;
+    opacity: 0.8;
+  }
+
+  .timeline-content h3 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+    color: #1e293b;
+  }
+
+  .timeline-content p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #475569;
+    margin: 0;
+  }
+
+  /* 2. Job Roles Layout for Join the Team Section */
+  .mobile-roles-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .role-pill {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 14px 16px;
+    border-radius: 8px;
+    text-align: left;
+  }
+
+  .role-pill strong {
+    font-size: 0.9rem;
+    color: #1e293b;
+  }
+
+  .role-tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    background-color: #f1f5f9;
+    color: #475569;
+    padding: 4px 8px;
+    border-radius: 4px;
+  }
 }
 
