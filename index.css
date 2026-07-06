@@ -2259,3 +2259,46 @@ section + section {
       border-top-color: rgba(31,41,51,.08);
     }
 
+/* --- SCREEN STATE MANAGEMENT --- */
+
+/* 1. By default (Desktop view), hide the comprehensive mobile layout */
+.mobile-only-layout {
+  display: none;
+}
+
+/* 2. When the screen width drops to mobile sizes (under 768px) */
+@media (max-width: 767px) {
+  
+  /* Hide heavy desktop-first components */
+  .hero-desktop-graphics, 
+  .demo, 
+  .complex-grid-layouts {
+    display: none !important;
+  }
+
+  /* Show our unified mobile-friendly page */
+  .mobile-only-layout {
+    display: block;
+    padding: 15px;
+  }
+
+  /* Style the mobile layout sections cleanly */
+  .mobile-section {
+    padding: 40px 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .mobile-section.alt-bg {
+    background-color: #f9fafb; /* Soft light background change */
+  }
+
+  .mobile-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #a855f7; /* Your accent color */
+    font-weight: bold;
+    text-decoration: none;
+  }
+}
+
