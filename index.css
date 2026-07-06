@@ -2302,3 +2302,24 @@ section + section {
   }
 }
 
+@media (max-width: 767px) {
+  
+  /* 1. Hide the heavy desktop-first components we decided on earlier */
+  .demo {
+    display: none !important;
+  }
+
+  /* 2. Hide the specific sections you just mentioned */
+  .hero-journey,          /* Hides the 01-05 linear journey steps container */
+  .trust-section,        /* Target your trust/logo cloud section class name */
+  .final-cta-section {   /* Target your bottom CTA section class name */
+    display: none !important;
+  }
+
+  /* 3. Show our unified mobile-friendly page layout */
+  .mobile-only-layout {
+    display: block;
+    padding: 15px;
+  }
+}
+
