@@ -2276,9 +2276,17 @@ section + section {
   .hero-journey, 
   .trust, 
   .final-cta {
+  .brand span {          
     display: none !important;
   }
 
+  /* Ensures the header layout stays clean and spaces items out beautifully */
+  .nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
   /* 1. HIDES THE SPECIFIC TEXT SECTION YOU MENTIONED */
   /* This targets the very first section inside your mobile layout and shuts it off */
   .mobile-only-layout .mobile-section:first-child {
