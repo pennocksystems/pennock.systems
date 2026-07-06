@@ -2318,18 +2318,32 @@ section + section {
     padding: 15px;
   }
 
+  /* UPGRADED GLASS CONTAINER FOR JOIN THE TEAM */
   .mobile-section {
     display: flex;
     flex-direction: column;
     align-items: center;    
     text-align: center;     
     padding: 40px 20px;
-    border-radius: 12px;
     margin-bottom: 20px;
+    
+    /* Glassmorphism Styles */
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
   }
   
+  /* SOLID BACKGROUND RESET FOR HOW IT WORKS & CONTACT */
   .mobile-section.alt-bg {
-    background-color: #f9fafb; 
+    background: #f9fafb !important; 
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: none !important;
+    border-radius: 12px;
   }
 
   .mobile-link {
@@ -2348,14 +2362,15 @@ section + section {
     width: 100%;
     gap: 10px;
   }
-/* --- UPGRADED MOBILE SECTION TYPOGRAPHY & CARDS --- */
+
+  /* --- UPGRADED MOBILE SECTION TYPOGRAPHY & CARDS --- */
   
   .mobile-kicker {
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-weight: 700;
-    color: #a855f7; /* Your accent color */
+    color: #a855f7; 
     margin-bottom: 8px;
   }
   
@@ -2372,7 +2387,7 @@ section + section {
     flex-direction: column;
     gap: 16px;
     width: 100%;
-    text-align: left; /* Changes timeline boxes back to left align for easier readability */
+    text-align: left; 
   }
 
   .timeline-card {
@@ -2414,12 +2429,13 @@ section + section {
     margin-bottom: 12px;
   }
 
+  /* Glass-friendly update for role pills */
   .role-pill {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #f8fafc;
-    border: 1px solid #e2e8f0;
+    background-color: rgba(255, 255, 255, 0.7); 
+    border: 1px solid rgba(226, 232, 240, 0.8);
     padding: 14px 16px;
     border-radius: 8px;
     text-align: left;
@@ -2439,4 +2455,3 @@ section + section {
     border-radius: 4px;
   }
 }
-
