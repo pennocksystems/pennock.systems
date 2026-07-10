@@ -1,0 +1,567 @@
+/* Night mode UAT layer.
+   Load this file after the current site CSS. The theme activates when
+   <html data-theme="night"> is present. */
+
+:root {
+  color-scheme: light;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 44px;
+  width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: 1px solid rgba(31,41,51,.14);
+  border-radius: 8px;
+  background: rgba(255,255,255,.72);
+  color: #1f2933;
+  font-family: "Exo 2", ui-sans-serif, system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 720;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease, color .2s ease;
+  white-space: nowrap;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px);
+  border-color: rgba(124,58,237,.42);
+}
+
+.theme-toggle__icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+  color: currentColor;
+}
+
+.theme-toggle__icon svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+  stroke: currentColor;
+}
+
+html[data-theme="night"] {
+  color-scheme: dark;
+
+  --bg: #05070c;
+  --bg-alt: #0a0f18;
+  --bg-elevated: #0f1726;
+  --surface: #131d30;
+  --surface-hover: #172338;
+
+  --text: #f8fafc;
+  --text-soft: #c6d0e1;
+  --text-muted: #8d9aaf;
+
+  --border: rgba(255,255,255,.08);
+  --border-hover: rgba(168,60,252,.28);
+
+  /* Logo-sampled flame palette. */
+  --cyan: #18d8fc;
+  --cyan-light: #59f0ff;
+  --blue: #1878d8;
+  --blue-light: #18a8f0;
+  --royal: #2448c0;
+  --violet: #6024d8;
+  --purple: #9030f0;
+  --purple-light: #a83cfc;
+  --magenta: #b43cfc;
+
+  --gradient-primary: linear-gradient(135deg, #18d8fc 0%, #1878d8 42%, #9030f0 78%, #b43cfc 100%);
+  --gradient-glow: radial-gradient(circle, rgba(24,216,252,.2), rgba(144,48,240,.16) 42%, transparent 72%);
+
+  --glass: rgba(15,23,38,.68);
+  --glass-strong: rgba(20,30,48,.84);
+  --blur: blur(18px);
+
+  --shadow-sm: 0 6px 18px rgba(0,0,0,.24);
+  --shadow: 0 18px 48px rgba(0,0,0,.36);
+  --shadow-lg: 0 32px 80px rgba(0,0,0,.48);
+  --shadow-glow: 0 0 34px rgba(24,216,252,.16), 0 0 48px rgba(168,60,252,.18);
+
+  --radius-xs: 8px;
+  --radius-sm: 12px;
+  --radius: 16px;
+  --radius-lg: 22px;
+  --transition: .28s cubic-bezier(.2,.8,.2,1);
+
+  /* Existing stylesheet variable bridge. */
+  --navy: var(--bg);
+  --navy-2: var(--bg-alt);
+  --charcoal: var(--bg-elevated);
+  --ink: var(--text);
+  --muted: var(--text-muted);
+  --line: var(--border);
+  --purple-2: var(--purple-light);
+  --tide: var(--cyan);
+  --tide-2: var(--cyan-light);
+  --sand: #101624;
+  --moon: var(--text);
+  --white: var(--text);
+  --panel: var(--glass);
+  --panel-strong: var(--glass-strong);
+}
+
+html[data-theme="night"],
+html[data-theme="night"] body {
+  background: var(--bg);
+}
+
+html[data-theme="night"] body {
+  color: var(--text);
+  background:
+    radial-gradient(circle at 80% 7%, rgba(24,216,252,.18), transparent 30rem),
+    radial-gradient(circle at 12% 30%, rgba(168,60,252,.18), transparent 26rem),
+    radial-gradient(circle at 72% 78%, rgba(96,36,216,.18), transparent 32rem),
+    radial-gradient(circle at 42% 92%, rgba(180,60,252,.14), transparent 26rem),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 48%, #070b13 100%);
+}
+
+html[data-theme="night"] body::before {
+  background-image:
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  opacity: .32;
+}
+
+html[data-theme="night"] .nav {
+  border-bottom-color: var(--border);
+  background: rgba(5,7,12,.78);
+  backdrop-filter: var(--blur);
+}
+
+html[data-theme="night"] .brand,
+html[data-theme="night"] h1,
+html[data-theme="night"] .section-head h2,
+html[data-theme="night"] .workflow-stage h3,
+html[data-theme="night"] .journey-step h3,
+html[data-theme="night"] .solution-card h3,
+html[data-theme="night"] .outcome-card h3,
+html[data-theme="night"] .work-card h3,
+html[data-theme="night"] .price-card h3,
+html[data-theme="night"] .about-copy h2,
+html[data-theme="night"] .cta-box h2,
+html[data-theme="night"] .quote strong,
+html[data-theme="night"] .info-card strong,
+html[data-theme="night"] .metric strong,
+html[data-theme="night"] .step h3,
+html[data-theme="night"] .about-panel strong,
+html[data-theme="night"] .workflow-note strong,
+html[data-theme="night"] .selector h3,
+html[data-theme="night"] .conversation h3,
+html[data-theme="night"] .system-panel h3,
+html[data-theme="night"] .tab-button,
+html[data-theme="night"] .tab-button.active,
+html[data-theme="night"] .event strong,
+html[data-theme="night"] .console-summary strong,
+html[data-theme="night"] .console-row strong,
+html[data-theme="night"] .console-metrics strong,
+html[data-theme="night"] .footprint-copy h3,
+html[data-theme="night"] .gemini-topbar strong,
+html[data-theme="night"] .gemini-result-head strong,
+html[data-theme="night"] .gemini-plan article h3,
+html[data-theme="night"] .gemini-plan h3,
+html[data-theme="night"] .query-topbar strong,
+html[data-theme="night"] .answer-summary strong,
+html[data-theme="night"] .finance-action h3,
+html[data-theme="night"] .response-head strong,
+html[data-theme="night"] .response-grid article h3,
+html[data-theme="night"] .response-grid h3,
+html[data-theme="night"] .query-outcomes h3,
+html[data-theme="night"] .timeline-content h3,
+html[data-theme="night"] .role-pill strong {
+  color: var(--text);
+}
+
+html[data-theme="night"] .hero p,
+html[data-theme="night"] .section-head p,
+html[data-theme="night"] .metric span,
+html[data-theme="night"] .quote p,
+html[data-theme="night"] .quote span,
+html[data-theme="night"] .info-card span,
+html[data-theme="night"] .solution-card p,
+html[data-theme="night"] .outcome-card p,
+html[data-theme="night"] .work-card p,
+html[data-theme="night"] .price-card p,
+html[data-theme="night"] .workflow-stage p,
+html[data-theme="night"] .journey-step p,
+html[data-theme="night"] .step p,
+html[data-theme="night"] .about-copy p,
+html[data-theme="night"] .about-panel span,
+html[data-theme="night"] .cta-box p,
+html[data-theme="night"] .flow-pill span,
+html[data-theme="night"] .workflow-note,
+html[data-theme="night"] .client-logo,
+html[data-theme="night"] .feature-list,
+html[data-theme="night"] footer,
+html[data-theme="night"] .console-summary p,
+html[data-theme="night"] .console-row p,
+html[data-theme="night"] .console-metrics span,
+html[data-theme="night"] .footprint-copy p,
+html[data-theme="night"] .bubble,
+html[data-theme="night"] .event span,
+html[data-theme="night"] .gemini-search p,
+html[data-theme="night"] .gemini-summary,
+html[data-theme="night"] .gemini-plan p,
+html[data-theme="night"] .query-prompt p,
+html[data-theme="night"] .query-composer textarea,
+html[data-theme="night"] .empty-state p,
+html[data-theme="night"] .answer-summary p,
+html[data-theme="night"] .finance-action p,
+html[data-theme="night"] .response-head span,
+html[data-theme="night"] .response-grid p,
+html[data-theme="night"] .work-card dd,
+html[data-theme="night"] .mobile-subhead,
+html[data-theme="night"] .timeline-content p,
+html[data-theme="night"] .role-tag {
+  color: var(--text-muted);
+}
+
+html[data-theme="night"] .nav-links {
+  color: var(--text-soft);
+}
+
+html[data-theme="night"] .nav-links a:hover,
+html[data-theme="night"] .button.secondary,
+html[data-theme="night"] .theme-toggle {
+  color: var(--text);
+}
+
+html[data-theme="night"] .eyebrow,
+html[data-theme="night"] .card-kicker,
+html[data-theme="night"] .outcome-number,
+html[data-theme="night"] .step-number,
+html[data-theme="night"] .work-card dt,
+html[data-theme="night"] .price span,
+html[data-theme="night"] .core-signal span,
+html[data-theme="night"] .console-summary span,
+html[data-theme="night"] .console-row em,
+html[data-theme="night"] .gemini-result-head span,
+html[data-theme="night"] .prompt-label,
+html[data-theme="night"] .query-prompt span,
+html[data-theme="night"] .query-composer label,
+html[data-theme="night"] .finance-action span,
+html[data-theme="night"] .response-grid article span,
+html[data-theme="night"] .mobile-kicker,
+html[data-theme="night"] .mobile-link,
+html[data-theme="night"] .timeline-num {
+  color: var(--purple-light);
+}
+
+html[data-theme="night"] .button,
+html[data-theme="night"] .theme-toggle {
+  border-color: var(--border);
+  background: var(--glass);
+  box-shadow: var(--shadow-sm);
+}
+
+html[data-theme="night"] .button:hover,
+html[data-theme="night"] .theme-toggle:hover,
+html[data-theme="night"] .solution-card:hover,
+html[data-theme="night"] .outcome-card:hover,
+html[data-theme="night"] .work-card:hover,
+html[data-theme="night"] .price-card:hover {
+  border-color: var(--border-hover);
+  background: var(--surface-hover);
+  box-shadow: var(--shadow-glow);
+}
+
+html[data-theme="night"] .button.primary {
+  color: #fff;
+  background: var(--gradient-primary);
+  box-shadow: 0 18px 44px rgba(24,216,252,.18), 0 18px 54px rgba(168,60,252,.22);
+}
+
+html[data-theme="night"] .hero-accent {
+  color: var(--purple-light);
+  background: linear-gradient(135deg, var(--violet) 0%, var(--purple-light) 50%, #d7a7ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 28px rgba(168,60,252,.34);
+}
+
+html[data-theme="night"] .button.secondary {
+  background: var(--glass);
+  border-color: var(--border);
+}
+
+html[data-theme="night"] .brand-mark,
+html[data-theme="night"] .stage-icon,
+html[data-theme="night"] .spark-mark {
+  color: var(--text);
+  border-color: rgba(168,60,252,.34);
+  background:
+    linear-gradient(145deg, rgba(24,216,252,.18), rgba(168,60,252,.18)),
+    var(--surface);
+  box-shadow: var(--shadow-glow);
+}
+
+html[data-theme="night"] .pulse-dot,
+html[data-theme="night"] .row-status,
+html[data-theme="night"] .feature-list li::before,
+html[data-theme="night"] .finance-checklist li::before {
+  background: var(--gradient-primary);
+  box-shadow: 0 0 0 8px rgba(168,60,252,.1), 0 0 18px rgba(24,216,252,.32);
+}
+
+html[data-theme="night"] .metric,
+html[data-theme="night"] .client-logo,
+html[data-theme="night"] .quote,
+html[data-theme="night"] .info-card,
+html[data-theme="night"] .solution-card,
+html[data-theme="night"] .outcome-card,
+html[data-theme="night"] .work-card,
+html[data-theme="night"] .price-card,
+html[data-theme="night"] .timeline,
+html[data-theme="night"] .about-band,
+html[data-theme="night"] .about-panel,
+html[data-theme="night"] .cta-box,
+html[data-theme="night"] .hero-journey,
+html[data-theme="night"] .journey-step,
+html[data-theme="night"] .workflow-stage,
+html[data-theme="night"] .demo-shell,
+html[data-theme="night"] .selector,
+html[data-theme="night"] .conversation,
+html[data-theme="night"] .system-panel,
+html[data-theme="night"] .gemini-card,
+html[data-theme="night"] .gemini-actions,
+html[data-theme="night"] .query-card,
+html[data-theme="night"] .query-outcomes,
+html[data-theme="night"] .query-response,
+html[data-theme="night"] .finance-answer,
+html[data-theme="night"] .finance-action,
+html[data-theme="night"] .response-grid article,
+html[data-theme="night"] .footprint-card,
+html[data-theme="night"] .mobile-section,
+html[data-theme="night"] .timeline-card,
+html[data-theme="night"] .role-pill {
+  background: var(--glass);
+  border-color: var(--border);
+  box-shadow: var(--shadow);
+}
+
+html[data-theme="night"] .workflow {
+  background:
+    radial-gradient(circle at 80% 0%, rgba(24,216,252,.2), transparent 18rem),
+    radial-gradient(circle at 20% 18%, rgba(168,60,252,.22), transparent 16rem),
+    radial-gradient(circle at 50% 88%, rgba(96,36,216,.16), transparent 18rem),
+    linear-gradient(180deg, rgba(15,23,38,.96), rgba(10,15,24,.88));
+  border-color: var(--border);
+  box-shadow: var(--shadow-lg);
+}
+
+html[data-theme="night"] .workflow::before {
+  border-color: var(--border);
+  background:
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+}
+
+html[data-theme="night"] .workflow::after,
+html[data-theme="night"] .minimal-orbit::before {
+  border-color: rgba(168,60,252,.24);
+  box-shadow: inset 0 0 42px rgba(24,216,252,.12), 0 0 70px rgba(168,60,252,.18);
+}
+
+html[data-theme="night"] .minimal-orbit::after {
+  border-color: rgba(255,255,255,.14);
+}
+
+html[data-theme="night"] .core-signal {
+  color: var(--text);
+  border-color: rgba(168,60,252,.38);
+  background:
+    radial-gradient(circle, rgba(24,216,252,.28), rgba(144,48,240,.2) 46%, rgba(15,23,38,.96) 70%);
+  box-shadow: 0 0 46px rgba(24,216,252,.18), 0 0 70px rgba(168,60,252,.18);
+}
+
+html[data-theme="night"] .signal-wave {
+  border-color: rgba(168,60,252,.3);
+  box-shadow: 0 0 22px rgba(24,216,252,.28), 0 0 32px rgba(168,60,252,.28);
+}
+
+html[data-theme="night"] .flow-pill,
+html[data-theme="night"] .capability,
+html[data-theme="night"] .tab-button,
+html[data-theme="night"] .prompt-chip,
+html[data-theme="night"] .gemini-plan article,
+html[data-theme="night"] .query-prompt,
+html[data-theme="night"] .query-composer,
+html[data-theme="night"] .empty-state,
+html[data-theme="night"] .answer-summary,
+html[data-theme="night"] .finance-checklist,
+html[data-theme="night"] .role-tag {
+  background: rgba(19,29,48,.76);
+  border-color: var(--border);
+  color: var(--text-soft);
+}
+
+html[data-theme="night"] .tab-button.active,
+html[data-theme="night"] .prompt-chip.active,
+html[data-theme="night"] .price-card.featured {
+  background: linear-gradient(180deg, rgba(168,60,252,.2), rgba(24,216,252,.1), rgba(19,29,48,.82));
+  border-color: var(--border-hover);
+}
+
+html[data-theme="night"] .gemini-topbar {
+  border-bottom-color: rgba(168,60,252,.18);
+  background:
+    linear-gradient(90deg, rgba(8,13,24,.92), rgba(19,29,48,.82), rgba(36,72,192,.18)),
+    var(--bg-elevated);
+}
+
+html[data-theme="night"] .perk-icon {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #0f1726;
+  box-shadow: 0 18px 54px rgba(0, 0, 0, .12);
+}
+
+html[data-theme="night"] .point-icon {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #0f1726;
+  box-shadow: 0 18px 54px rgba(0, 0, 0, .12);
+}
+
+html[data-theme="night"] .job-card {
+  background: rgba(15, 23, 38, 0.68);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow:
+      0 20px 60px rgba(0,0,0,.45),
+      0 0 40px rgba(35,150,255,.08);
+  border-radius: var(--radius);
+  padding: 22px;
+  transition: all .25s ease;
+}
+
+html[data-theme="night"] .job-tag{
+    display:inline-flex;
+    align-items:center;
+    padding:5px 12px;
+    border-radius:999px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(35,150,255,.14),
+            rgba(123,66,255,.18)
+        );
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,.08);
+    color:rgba(245,247,250,.88);
+    font-size:12px;
+    font-weight:700;
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.22),
+        0 0 16px rgba(35,150,255,.06);
+    transition:
+        background .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease,
+        transform .25s ease;
+}
+
+html[data-theme="night"] .login-card-top strong{
+    color:#A83CFC;
+    text-shadow:
+        0 0 10px rgba(168,60,252,.18);
+}
+
+html[data-theme="night"] .gemini-topbar strong {
+  color: #a83cfc;
+  text-shadow: 0 0 18px rgba(24,216,252,.18);
+}
+
+html[data-theme="night"] .field input {
+  color: black
+}
+
+html[data-theme="night"] .gemini-summary {
+  border-color: rgba(168,60,252,.18);
+  background:
+    linear-gradient(135deg, rgba(8,13,24,.9), rgba(19,29,48,.78), rgba(96,36,216,.16)),
+    var(--bg-elevated);
+  color: var(--text-soft);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.04);
+}
+
+html[data-theme="night"] .console-screen,
+html[data-theme="night"] .console-summary,
+html[data-theme="night"] .console-row,
+html[data-theme="night"] .console-metrics div,
+html[data-theme="night"] .gemini-prompt-area,
+html[data-theme="night"] .gemini-search,
+html[data-theme="night"] .gemini-answer,
+html[data-theme="night"] .gemini-result,
+html[data-theme="night"] .query-composer textarea,
+html[data-theme="night"] .response-grid article,
+html[data-theme="night"] .bubble.ai,
+html[data-theme="night"] .event {
+  background: rgba(15,23,38,.84);
+  border-color: var(--border);
+  color: var(--text-soft);
+}
+
+html[data-theme="night"] .bubble.customer {
+  background: linear-gradient(135deg, rgba(24,216,252,.22), rgba(168,60,252,.2));
+  border-color: var(--border-hover);
+  color: var(--text);
+}
+
+html[data-theme="night"] .query-composer textarea {
+  outline: none;
+  caret-color: var(--purple-light);
+}
+
+html[data-theme="night"] .query-composer textarea:focus {
+  border-color: var(--border-hover);
+  box-shadow: 0 0 0 4px rgba(168,60,252,.14);
+}
+
+html[data-theme="night"] .loading-line {
+  background: linear-gradient(90deg, var(--surface), var(--surface-hover), var(--surface));
+}
+
+html[data-theme="night"] .work-top {
+  border-color: var(--border);
+  background:
+    linear-gradient(135deg, rgba(24,216,252,.18), rgba(168,60,252,.2)),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.08) 0 1px, transparent 1px 18px);
+}
+
+html[data-theme="night"] .work-top::after {
+  border-color: var(--border-hover);
+  background: rgba(15,23,38,.74);
+}
+
+html[data-theme="night"] .step {
+  border-color: var(--border);
+}
+
+html[data-theme="night"] .mobile-section.alt-bg {
+  background: var(--bg-elevated) !important;
+  border-color: var(--border) !important;
+  box-shadow: var(--shadow) !important;
+}
+
+html[data-theme="night"] footer {
+  border-top-color: var(--border);
+}
+
+@media (max-width: 767px) {
+  .theme-toggle {
+    flex-basis: 40px;
+    width: 40px;
+    min-height: 40px;
+  }
+}
