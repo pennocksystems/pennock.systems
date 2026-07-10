@@ -103,7 +103,7 @@ answerPanel.innerHTML = `
   <div class="gemini-result">
     <div class="gemini-result-head">
       <div class="spark-mark">
-        <link rel="spark-mark" src="../images/Logo.png" type="image/png" />
+        <img src="images/Logo.png" alt="Logo" class="logo-icon">
       </div>
       <div>
         <strong>${demo.title}</strong>
