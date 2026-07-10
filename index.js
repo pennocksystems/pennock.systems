@@ -84,7 +84,7 @@ function renderLoading() {
   answerPanel.innerHTML = `
     <div class="gemini-loading">
   <div class="spark-mark">
-    <img src="Logo.png" alt="Logo" class="logo-icon">
+    <link rel="icon" href="../images/Logo.png" type="image/png" />
   </div>
 
   <p>Analyzing the prompt and preparing an automation plan...</p>
@@ -103,7 +103,7 @@ answerPanel.innerHTML = `
   <div class="gemini-result">
     <div class="gemini-result-head">
       <div class="spark-mark">
-        <img src="Logo.png" alt="Logo" class="logo-icon">
+        <link rel="icon" href="../images/Logo.png" type="image/png" />
       </div>
       <div>
         <strong>${demo.title}</strong>
