@@ -2498,5 +2498,17 @@ section + section {
     border-radius: 4px;
   }
 
+  .login-card{
+    order:1;
+    width:100%;
+    max-width:460px;
+    margin:0 auto;
+}
+
+.login-intro{
+    order:2;
+    width:100%;
+}
+
 }
 
