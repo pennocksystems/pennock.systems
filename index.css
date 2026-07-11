@@ -1858,6 +1858,34 @@ section + section {
       flex-wrap: wrap;
     }
 
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.footer-social a {
+    color: var(--muted);
+    transition: color .25s ease, transform .25s ease;
+}
+
+.footer-social a:hover {
+    color: var(--text);
+    transform: translateY(-2px);
+}
+
+.footer-social svg {
+    width: 22px;
+    height: 22px;
+    display: block;
+}
+
     @keyframes minimalPulse {
       0%, 100% { opacity: .56; transform: translate(-50%, -50%) scale(.96); }
       50% { opacity: .92; transform: translate(-50%, -50%) scale(1.03); }
