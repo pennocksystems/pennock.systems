@@ -565,3 +565,40 @@ html[data-theme="night"] footer {
     min-height: 40px;
   }
 }
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    background:
+        radial-gradient(circle at top right,
+            rgba(35,150,255,.12),
+            transparent 60%);
+    opacity:0;
+    transition:opacity .35s ease;
+}
+
+html[data-theme="night"] body::before{
+    opacity:1;
+}
+
+html.theme-switching{
+    transition:opacity .22s ease;
+    opacity:.92;
+}
+
+html,
+body,
+*,
+*::before,
+*::after {
+
+  transition:
+    background-color .35s ease,
+    color .35s ease,
+    border-color .35s ease,
+    box-shadow .35s ease,
+    fill .35s ease,
+    stroke .35s ease;
+}
