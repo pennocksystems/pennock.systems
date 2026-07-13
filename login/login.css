@@ -1,14 +1,32 @@
-/* ============================================
-   Login page styles — extends index.css tokens
-   (--purple, --tide, --line, --muted, --radius,
-   --shadow, --panel, --ink are inherited)
-   ============================================ */
+/* ============================================================
+   LOGIN — Premium redesign
+   Inherits all CSS variables from index.css
+   ============================================================ */
 
+/* ── Section layout ─────────────────────────────────────────── */
 .login-section {
-  min-height: calc(100vh - 76px);
+  min-height: calc(100vh - 72px);
   display: flex;
   align-items: center;
-  padding: 72px 0;
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 55% 60% at 10% 20%, rgba(124,58,237,.13), transparent),
+    radial-gradient(ellipse 45% 50% at 90% 80%, rgba(15,143,207,.09), transparent);
+}
+
+.login-section .container {
+  position: relative;
+  z-index: 1;
 }
 
 .login-grid {
@@ -18,13 +36,15 @@
   align-items: center;
 }
 
-/* ---------- Left column: intro copy ---------- */
-
+/* ── Left column: intro ─────────────────────────────────────── */
 .login-intro h1 {
   margin: 18px 0 16px;
   font-size: clamp(40px, 5.5vw, 64px);
   line-height: 1.02;
   max-width: 560px;
+  color: var(--white);
+  font-weight: 760;
+  font-family: "Exo 2", ui-sans-serif, sans-serif;
 }
 
 .login-intro > p {
@@ -32,8 +52,10 @@
   color: var(--muted);
   font-size: 17px;
   line-height: 1.7;
+  margin: 0;
 }
 
+/* ── Feature points grid ────────────────────────────────────── */
 .login-points {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -50,6 +72,12 @@
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--panel);
+  transition: border-color .22s ease, box-shadow .22s ease;
+}
+
+.login-point:hover {
+  border-color: rgba(168,85,247,.3);
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
 }
 
 .point-icon {
@@ -59,8 +87,8 @@
   display: grid;
   place-items: center;
   border-radius: 8px;
-  border: 1px solid rgba(124, 58, 237, .28);
-  background: linear-gradient(145deg, rgba(124, 58, 237, .16), rgba(255, 255, 255, .9));
+  border: 1px solid rgba(124,58,237,.28);
+  background: linear-gradient(145deg, rgba(124,58,237,.16), rgba(255,255,255,.9));
   color: var(--purple-2);
 }
 
@@ -71,9 +99,12 @@
 
 .login-point strong {
   display: block;
-  color: var(--ink);
+  color: var(--white);
   font-size: 14px;
+  font-weight: 720;
   margin-bottom: 4px;
+  font-family: "Exo 2", ui-sans-serif, sans-serif;
+  line-height: 1.2;
 }
 
 .login-point span {
@@ -83,54 +114,58 @@
   line-height: 1.5;
 }
 
-/* ---------- Right column: login card ---------- */
-
+/* ── Login card ─────────────────────────────────────────────── */
 .login-card {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--panel);
-  box-shadow: var(--shadow);
+  box-shadow: 0 24px 64px rgba(0,0,0,.12), 0 0 0 1px rgba(168,85,247,.06);
   overflow: hidden;
 }
 
+/* Terminal-style title bar */
 .login-card-top {
-  min-height: 54px;
+  min-height: 48px;
   display: flex;
   align-items: center;
   gap: 8px;
   padding: 0 18px;
-  border-bottom: 1px solid rgba(31, 41, 51, .08);
-  background: linear-gradient(90deg, rgba(255, 255, 255, .86), rgba(248, 251, 255, .74));
+  border-bottom: 1px solid var(--line);
+  background: rgba(255,255,255,.04);
 }
 
 .login-card-top span {
   width: 9px;
   height: 9px;
   border-radius: 999px;
-  background: rgba(31, 41, 51, .18);
 }
 
-.login-card-top span:nth-child(1) { background: rgba(124, 58, 237, .42); }
-.login-card-top span:nth-child(2) { background: rgba(15, 143, 207, .42); }
-.login-card-top span:nth-child(3) { background: rgba(255, 199, 125, .8); }
+.login-card-top span:nth-child(1) { background: rgba(124,58,237,.5); }
+.login-card-top span:nth-child(2) { background: rgba(15,143,207,.5); }
+.login-card-top span:nth-child(3) { background: rgba(255,199,125,.8); }
 
 .login-card-top strong {
   margin-left: auto;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 760;
   text-transform: uppercase;
+  letter-spacing: .06em;
+  font-family: "Exo 2", ui-sans-serif, sans-serif;
 }
 
+/* ── Card body ──────────────────────────────────────────────── */
 .login-card-body {
   padding: 32px;
 }
 
 .login-card-body h2 {
   margin: 0 0 8px;
-  color: var(--ink);
+  color: var(--white);
   font-size: 26px;
   line-height: 1.15;
+  font-weight: 760;
+  font-family: "Exo 2", ui-sans-serif, sans-serif;
 }
 
 .login-subtitle {
@@ -140,8 +175,7 @@
   line-height: 1.55;
 }
 
-/* ---------- Form ---------- */
-
+/* ── Form fields ────────────────────────────────────────────── */
 .login-form {
   display: grid;
   gap: 18px;
@@ -157,31 +191,33 @@
   font-size: 12px;
   font-weight: 760;
   text-transform: uppercase;
-  letter-spacing: .02em;
+  letter-spacing: .04em;
+  font-family: "Exo 2", ui-sans-serif, sans-serif;
 }
 
 .field input {
   width: 100%;
   min-height: 48px;
   padding: 0 14px;
-  border: 1px solid rgba(31, 41, 51, .14);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, .9);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
   color: var(--ink);
   font: inherit;
   font-size: 15px;
   outline: none;
-  transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+  box-sizing: border-box;
+  transition: border-color .2s ease, box-shadow .2s ease;
 }
 
 .field input::placeholder {
-  color: rgba(104, 113, 125, .68);
+  color: var(--muted);
+  opacity: .55;
 }
 
 .field input:focus {
-  border-color: rgba(168, 85, 247, .48);
-  box-shadow: 0 0 0 4px rgba(168, 85, 247, .12);
-  background: #ffffff;
+  border-color: rgba(168,85,247,.55);
+  box-shadow: 0 0 0 3px rgba(168,85,247,.13);
 }
 
 .field-row {
@@ -210,11 +246,11 @@
 .forgot-link {
   color: var(--purple-2);
   font-weight: 700;
-  transition: color .2s ease;
+  transition: opacity .15s ease;
 }
 
 .forgot-link:hover {
-  color: var(--purple);
+  opacity: .72;
   text-decoration: underline;
 }
 
@@ -225,8 +261,7 @@
   font-size: 15px;
 }
 
-/* ---------- Divider & footer note ---------- */
-
+/* ── Divider ────────────────────────────────────────────────── */
 .divider {
   display: flex;
   align-items: center;
@@ -246,6 +281,7 @@
   background: var(--line);
 }
 
+/* ── Signup note ────────────────────────────────────────────── */
 .signup-note {
   margin: 0;
   text-align: center;
@@ -263,16 +299,7 @@
   text-decoration: underline;
 }
 
-/* ---------- Active nav state ---------- */
-
-.nav-actions .button.secondary.active {
-  border-color: rgba(168, 85, 247, .42);
-  background: linear-gradient(135deg, rgba(124, 58, 237, .12), rgba(255, 255, 255, .78));
-  color: var(--ink);
-}
-
-/* ---------- Responsive ---------- */
-
+/* ── Responsive ─────────────────────────────────────────────── */
 @media (max-width: 1040px) {
   .login-grid {
     grid-template-columns: 1fr;
@@ -291,7 +318,8 @@
 
 @media (max-width: 620px) {
   .login-section {
-    padding: 48px 0;
+    padding: 56px 0;
+    align-items: flex-start;
   }
 
   .login-points {
