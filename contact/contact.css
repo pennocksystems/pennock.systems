@@ -1,54 +1,99 @@
-/* ---------- CONTACT PAGE LAYOUT ---------- */
+/* ============================================================
+   CONTACT — Premium redesign
+   Inherits all CSS variables from index.css
+   ============================================================ */
 
+/* ── Main layout ────────────────────────────────────────────── */
 .contact-main {
-  padding: 80px 0;
-  min-height: calc(100vh - 80px);
+  padding: 88px 0 80px;
+  min-height: calc(100vh - 72px);
   display: flex;
   align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 50% 55% at 85% 20%, rgba(124,58,237,.12), transparent),
+    radial-gradient(ellipse 40% 45% at 5% 80%, rgba(15,143,207,.09), transparent);
+}
+
+.contact-main .container {
+  position: relative;
+  z-index: 1;
 }
 
 .grid-contact {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
-  gap: 60px;
+  gap: 64px;
   align-items: start;
 }
 
-/* Subtitle under H1 */
+/* ── Eyebrow ────────────────────────────────────────────────── */
+.contact-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--purple-2);
+  font-size: 13px;
+  font-weight: 760;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  margin-bottom: 22px;
+  font-family: "Exo 2", ui-sans-serif, sans-serif;
+}
+
+/* ── Heading ────────────────────────────────────────────────── */
+.contact-form-container h1 {
+  font-size: clamp(34px, 4.5vw, 58px);
+  line-height: 1.0;
+  margin: 0 0 16px;
+  color: var(--white);
+  font-weight: 760;
+  font-family: "Exo 2", ui-sans-serif, sans-serif;
+}
+
 .subtitle {
-  color: var(--ink);
-  opacity: 0.8;
+  color: var(--muted);
   font-size: 16px;
-  margin-top: 12px;
-  margin-bottom: 40px;
-  line-height: 1.5;
+  margin: 0 0 36px;
+  line-height: 1.65;
+  max-width: 580px;
 }
 
-/* ---------- FORM STYLES ---------- */
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
+/* ── Form ───────────────────────────────────────────────────── */
 .form-row {
   display: flex;
-  gap: 20px;
+  gap: 16px;
+  margin-bottom: 16px;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 7px;
   flex: 1;
+  margin-bottom: 16px;
+}
+
+.form-row .form-group {
+  margin-bottom: 0;
 }
 
 .form-group label {
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 12px;
+  font-weight: 760;
   color: var(--ink);
-  letter-spacing: 0.05em;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  font-family: "Exo 2", ui-sans-serif, sans-serif;
 }
 
 .form-group input,
@@ -57,137 +102,185 @@
   background: var(--panel);
   border: 1px solid var(--line);
   padding: 12px 16px;
-  border-radius: 8px;
+  border-radius: var(--radius);
   color: var(--ink);
   font-size: 14px;
   font-family: inherit;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition: border-color .2s ease, box-shadow .2s ease;
   width: 100%;
   box-sizing: border-box;
 }
 
-/* Subtle focus effect on active textboxes */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--muted);
+  opacity: .6;
+}
+
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #3b82f6; /* Modern Blue focal point */
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+  border-color: rgba(168,85,247,.6);
+  box-shadow: 0 0 0 3px rgba(168,85,247,.14);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
 }
 
 .submit-btn {
-  align-self: flex-start;
-  padding: 14px 28px;
+  margin-top: 6px;
+  padding: 14px 32px;
   font-size: 15px;
   cursor: pointer;
-  margin-top: 10px;
 }
 
-/* ---------- SIDEBAR & TRUST CARDS ---------- */
-
+/* ── Sidebar ────────────────────────────────────────────────── */
 .contact-sidebar {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  margin-top: 20px;
+  gap: 16px;
+  margin-top: 88px;
 }
 
 .sidebar-card {
   background: var(--panel);
   border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 24px;
+  border-radius: var(--radius);
+  padding: 26px;
+  box-shadow: 0 14px 40px rgba(0,0,0,.07);
+  transition: border-color .22s ease, box-shadow .22s ease;
+}
+
+.sidebar-card:hover {
+  border-color: rgba(168,85,247,.26);
+  box-shadow: 0 18px 48px rgba(0,0,0,.1);
 }
 
 .sidebar-card h3 {
-  margin-top: 0;
-  margin-bottom: 10px;
+  margin: 0 0 10px;
   font-size: 18px;
+  font-weight: 720;
+  color: var(--white);
+  font-family: "Exo 2", ui-sans-serif, sans-serif;
+  line-height: 1.2;
 }
 
-.sidebar-card p {
+.sidebar-card > p {
   font-size: 14px;
-  color: var(--ink);
-  opacity: 0.7;
-  line-height: 1.4;
-  margin: 0 0 16px 0;
+  color: var(--muted);
+  line-height: 1.55;
+  margin: 0 0 18px;
 }
 
+/* ── Trust list ─────────────────────────────────────────────── */
 .trust-list {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  font-size: 14px;
+  gap: 11px;
 }
 
-/* Live Operational Status Panel */
+.trust-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--ink);
+  line-height: 1.4;
+}
+
+.trust-list li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 99px;
+  flex: 0 0 auto;
+  background: var(--purple-2);
+  box-shadow: 0 0 8px rgba(168,85,247,.5);
+}
+
+/* ── Status card ────────────────────────────────────────────── */
 .status-card {
-  background: rgba(16, 185, 129, 0.04);
-  border-color: rgba(16, 185, 129, 0.2);
+  background: rgba(16,185,129,.04);
+  border-color: rgba(16,185,129,.22);
+}
+
+.status-card:hover {
+  border-color: rgba(16,185,129,.4);
+  box-shadow: 0 18px 48px rgba(16,185,129,.06);
 }
 
 .status-indicator {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 14px;
   color: #10b981;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
+  font-family: "Exo 2", ui-sans-serif, sans-serif;
 }
 
 .status-details {
-  margin: 0 !important;
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
 }
 
-/* Dynamic green dot pulsing effect */
-.pulse-dot {
+/* Green pulse dot scoped to status card */
+.status-indicator .pulse-dot {
   width: 8px;
   height: 8px;
   background: #10b981;
   border-radius: 50%;
   position: relative;
+  flex: 0 0 auto;
 }
 
-.pulse-dot::after {
-  content: '';
+.status-indicator .pulse-dot::after {
+  content: "";
   position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
+  inset: 0;
   background: #10b981;
   border-radius: 50%;
-  animation: pulse 2s infinite ease-in-out;
+  animation: statusPulse 2s ease-in-out infinite;
 }
 
-@keyframes pulse {
-  0% { transform: scale(1); opacity: 0.6; }
+@keyframes statusPulse {
+  0%   { transform: scale(1); opacity: .6; }
   100% { transform: scale(3); opacity: 0; }
 }
 
-/* ---------- RESPONSIVE DESIGN ---------- */
-
-@media (max-width: 768px) {
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 900px) {
   .grid-contact {
     grid-template-columns: 1fr;
     gap: 40px;
   }
-  
+
+  .contact-sidebar {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .contact-main {
+    padding: 64px 0 56px;
+    align-items: flex-start;
+  }
+
   .form-row {
     flex-direction: column;
-    gap: 20px;
+    gap: 0;
   }
-  
-  .contact-main {
-    padding: 40px 0;
-  }
-  
+
   .submit-btn {
     width: 100%;
-    align-self: stretch;
   }
 }
