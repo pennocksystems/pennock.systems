@@ -1858,34 +1858,6 @@ section + section {
       flex-wrap: wrap;
     }
 
-.footer-left {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.footer-social {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-}
-
-.footer-social a {
-    color: var(--muted);
-    transition: color .25s ease, transform .25s ease;
-}
-
-.footer-social a:hover {
-    color: var(--text);
-    transform: translateY(-2px);
-}
-
-.footer-social svg {
-    width: 22px;
-    height: 22px;
-    display: block;
-}
-
     @keyframes minimalPulse {
       0%, 100% { opacity: .56; transform: translate(-50%, -50%) scale(.96); }
       50% { opacity: .92; transform: translate(-50%, -50%) scale(1.03); }
@@ -2346,197 +2318,174 @@ section + section {
     font-size:20px;
   }
 
-  /* --- SCREEN STATE MANAGEMENT --- */
+}
 
-/* 1. By default (Desktop view), hide the comprehensive mobile layout */
-.mobile-only-layout {
+/* ═══════════════════════════════════════════════════════
+   MODERNIZATION 1 · Scroll Reveal
+   ═══════════════════════════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .6s cubic-bezier(.2,.8,.2,1), transform .6s cubic-bezier(.2,.8,.2,1);
+  will-change: opacity, transform;
+}
+.reveal.stagger-1 { transition-delay: .10s; }
+.reveal.stagger-2 { transition-delay: .20s; }
+.reveal.stagger-3 { transition-delay: .30s; }
+.reveal.stagger-4 { transition-delay: .40s; }
+.reveal.stagger-5 { transition-delay: .50s; }
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ═══════════════════════════════════════════════════════
+   MODERNIZATION 2 · Hero accent gradient text (day mode)
+   ═══════════════════════════════════════════════════════ */
+.hero-accent {
+  background: linear-gradient(135deg, #7c3aed 0%, #0f8fcf 55%, #a855f7 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ═══════════════════════════════════════════════════════
+   MODERNIZATION 3 · Primary button shimmer
+   ═══════════════════════════════════════════════════════ */
+.button.primary {
+  position: relative;
+  overflow: hidden;
+}
+.button.primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 35%, rgba(255,255,255,.32) 50%, transparent 65%);
+  transform: translateX(-150%);
+  animation: btnShimmer 3.5s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes btnShimmer {
+  0%, 65%, 100% { transform: translateX(-150%); }
+  80%            { transform: translateX(150%); }
+}
+
+/* ═══════════════════════════════════════════════════════
+   MODERNIZATION 4 · Hero aurora ambient glow
+   ═══════════════════════════════════════════════════════ */
+.hero {
+  position: relative;
+  isolation: isolate;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 70% 50% at 80% 10%, rgba(124,58,237,.16), transparent),
+    radial-gradient(ellipse 55% 45% at 12% 70%, rgba(15,143,207,.12), transparent);
+  animation: auroraShift 10s ease-in-out infinite alternate;
+}
+@keyframes auroraShift {
+  0%   { opacity: .6; }
+  100% { opacity: 1; }
+}
+
+/* ═══════════════════════════════════════════════════════
+   MODERNIZATION 5 · Nav scroll elevation
+   ═══════════════════════════════════════════════════════ */
+.nav {
+  transition: box-shadow .3s ease, border-color .3s ease;
+}
+.nav.scrolled {
+  box-shadow: 0 4px 28px rgba(31,41,51,.12);
+  border-bottom-color: rgba(31,41,51,.14);
+}
+
+/* ═══════════════════════════════════════════════════════
+   MODERNIZATION 6 · Mobile hamburger button
+   ═══════════════════════════════════════════════════════ */
+.nav-hamburger {
   display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: 1px solid rgba(31,41,51,.14);
+  border-radius: 8px;
+  background: rgba(255,255,255,.72);
+  cursor: pointer;
+  transition: border-color .2s ease, background .2s ease;
+}
+.nav-hamburger:hover {
+  border-color: rgba(124,58,237,.36);
+}
+.nav-hamburger span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: #1f2933;
+  transition: transform .25s ease, opacity .25s ease;
+}
+.nav-hamburger[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-hamburger[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.nav-hamburger[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
-/* 2. Unified Mobile Styles (Applied together on screens under 768px wide) */
-@media (max-width: 767px) {
-
-  /* Hides unwanted desktop elements and the logo text cleanly */
-  .hero-desktop-graphics, 
-  .complex-grid-layouts,
-  .demo, 
-  .hero-journey, 
-  .trust, 
-  .final-cta,
-  .brand span {            
-    display: none !important;
-  }
-
-  /* 1. CENTERS THE BUTTONS AND ANCHORS THE LOGO TO THE LEFT */
-  .nav-inner {
-    display: flex;
-    justify-content: center; /* Centers the buttons in the exact middle */
-    align-items: center;
-    position: relative;      /* Provides a coordinate anchor point for the logo */
-    width: 100%;
-    padding: 10px 0;
-  }
-
-  .brand {
-    position: absolute;      /* Pulls the logo out of the standard flex alignment layout */
-    left: 15px;              /* Forces it to stick to the left boundary edge */
-    top: 50%;
-    transform: translateY(-50%); /* Centers the icon vertically */
-  }
-
-  .nav-actions {
-    display: flex !important; /* Forces your main action container to stay visible */
-    gap: 10px;               /* Clean spacing gaps between your two navigation buttons */
-  }
-
-  /* Hides the desktop link navigation layer on mobile viewports */
-  .nav-links {
-    display: none !important;
-  }
-
-  /* --- REST OF YOUR MOBILE CONTENT STYLES CONTINUE BELOW --- */
-
-  .mobile-only-layout .mobile-section:first-child {
-    display: none !important;
-  }
-
-  .mobile-only-layout {
-    display: block !important;
-    padding: 15px;
-  }
-
-  .mobile-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;    
-    text-align: center;     
-    padding: 40px 20px;
-    border-radius: 12px;
-    margin-bottom: 20px;
-  }
-
-  .mobile-section.alt-bg {
-    background-color: #f9fafb; 
-  }
-
-  .mobile-link {
-    display: inline-block;
-    margin-top: 15px;
-    color: #a855f7; 
-    font-weight: bold;
-    text-decoration: none;
-    text-align: center;
-  }
-
-  .mobile-contact-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    gap: 10px;
-  }
-/* --- UPGRADED MOBILE SECTION TYPOGRAPHY & CARDS --- */
-  
-  .mobile-kicker {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-weight: 700;
-    color: #a855f7; /* Your accent color */
-    margin-bottom: 8px;
-  }
-  
-  .mobile-subhead {
-    font-size: 0.95rem;
-    color: #666;
-    margin-bottom: 24px;
-    max-width: 90%;
-  }
-
-  /* 1. Timeline Layout for How It Works Section */
-  .mobile-timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    width: 100%;
-    text-align: left; /* Changes timeline boxes back to left align for easier readability */
-  }
-
-  .timeline-card {
-    display: flex;
-    gap: 16px;
-    background-color: #ffffff;
-    padding: 16px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    border: 1px solid #f1f5f9;
-  }
-
-  .timeline-num {
-    font-size: 1.25rem;
-    font-weight: 800;
-    color: #a855f7;
-    opacity: 0.8;
-  }
-
-  .timeline-content h3 {
-    font-size: 1rem;
-    margin-bottom: 4px;
-    color: #1e293b;
-  }
-
-  .timeline-content p {
-    font-size: 0.85rem;
-    line-height: 1.4;
-    color: #475569;
-    margin: 0;
-  }
-
-  /* 2. Job Roles Layout for Join the Team Section */
-  .mobile-roles-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-    margin-bottom: 12px;
-  }
-
-  .role-pill {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f8fafc;
-    border: 1px solid #e2e8f0;
-    padding: 14px 16px;
-    border-radius: 8px;
-    text-align: left;
-  }
-
-  .role-pill strong {
-    font-size: 0.9rem;
-    color: #1e293b;
-  }
-
-  .role-tag {
-    font-size: 0.75rem;
-    font-weight: 600;
-    background-color: #f1f5f9;
-    color: #475569;
-    padding: 4px 8px;
-    border-radius: 4px;
-  }
-
-  .login-card{
-    order:1;
-    width:100%;
-    max-width:460px;
-    margin:0 auto;
+/* ═══════════════════════════════════════════════════════
+   MODERNIZATION 7 · Mobile nav drawer
+   ═══════════════════════════════════════════════════════ */
+.mobile-nav {
+  padding: 12px 16px 16px;
+  border-top: 1px solid rgba(31,41,51,.08);
+  background: rgba(255,255,255,.97);
+  backdrop-filter: blur(18px);
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+}
+.mobile-nav.open {
+  display: flex;
+  animation: mobileNavIn .22s ease forwards;
+}
+.mobile-nav a {
+  padding: 11px 14px;
+  border-radius: 8px;
+  color: #1f2933;
+  font-size: 15px;
+  font-weight: 620;
+  transition: background .15s ease;
+}
+.mobile-nav a:hover {
+  background: rgba(31,41,51,.06);
+}
+.mobile-nav-divider {
+  height: 1px;
+  background: rgba(31,41,51,.08);
+  margin: 6px 0;
+}
+.mobile-nav .button {
+  text-align: center;
+  justify-content: center;
+}
+@keyframes mobileNavIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-.login-intro{
-    order:2;
-    width:100%;
+@media (max-width: 820px) {
+  .nav-hamburger { display: flex; }
+  .nav-actions a.button { display: none; }
 }
-
-}
-
