@@ -84,7 +84,7 @@ function renderLoading() {
   answerPanel.innerHTML = `
     <div class="gemini-loading">
   <div class="spark-mark">
-    <img src="../images/Logo.png" alt="Logo" class="logo-icon">
+    <img src="..images/Logo.png" alt="Logo" class="logo-icon">
   </div>
 
   <p>Analyzing the prompt and preparing an automation plan...</p>
@@ -103,7 +103,7 @@ answerPanel.innerHTML = `
   <div class="gemini-result">
     <div class="gemini-result-head">
       <div class="spark-mark">
-        <img src="../images/Logo.png" alt="Logo" class="logo-icon">
+        <img src="..images/Logo.png" alt="Logo" class="logo-icon">
       </div>
       <div>
         <strong>${demo.title}</strong>
@@ -159,3 +159,81 @@ promptButtons.forEach((button) => {
 });
 
 typePrompt(activeKey);
+
+// ─── Scroll Reveal ────────────────────────────────────────────────
+(function () {
+  var revealObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+
+  document.querySelectorAll(".reveal").forEach(function (el) {
+    revealObserver.observe(el);
+  });
+})();
+
+// ─── Animated Counters ────────────────────────────────────────────
+(function () {
+  function animateCounter(el) {
+    var target = parseInt(el.dataset.count, 10);
+    var suffix = el.dataset.suffix || "";
+    var duration = 1400;
+    var start = performance.now();
+
+    function step(now) {
+      var elapsed = now - start;
+      var progress = Math.min(elapsed / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target) + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  var counterObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting && !entry.target.dataset.counted) {
+        entry.target.dataset.counted = "true";
+        animateCounter(entry.target);
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll("[data-count]").forEach(function (el) {
+    counterObserver.observe(el);
+  });
+})();
+
+// ─── Nav Scroll State ─────────────────────────────────────────────
+(function () {
+  var nav = document.querySelector(".nav");
+  if (!nav) return;
+  window.addEventListener("scroll", function () {
+    nav.classList.toggle("scrolled", window.scrollY > 30);
+  }, { passive: true });
+})();
+
+// ─── Mobile Hamburger ─────────────────────────────────────────────
+(function () {
+  var hamburger = document.querySelector(".nav-hamburger");
+  var mobileNav = document.querySelector(".mobile-nav");
+  var nav = document.querySelector(".nav");
+  if (!hamburger || !mobileNav) return;
+
+  hamburger.addEventListener("click", function () {
+    var isOpen = mobileNav.classList.toggle("open");
+    hamburger.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  document.addEventListener("click", function (e) {
+    if (nav && !nav.contains(e.target)) {
+      mobileNav.classList.remove("open");
+      hamburger.setAttribute("aria-expanded", "false");
+    }
+  });
+})();
