@@ -602,3 +602,37 @@ body,
     fill .35s ease,
     stroke .35s ease;
 }
+
+/* ─── Night mode: mobile hamburger & nav drawer ──────────────────── */
+html[data-theme="night"] .nav-hamburger {
+  background: var(--glass);
+  border-color: var(--border);
+}
+html[data-theme="night"] .nav-hamburger span {
+  background: var(--text);
+}
+html[data-theme="night"] .mobile-nav {
+  background: rgba(5,7,12,.97);
+  border-top-color: var(--border);
+}
+html[data-theme="night"] .mobile-nav a {
+  color: var(--text-soft);
+}
+html[data-theme="night"] .mobile-nav a:hover {
+  background: var(--surface);
+  color: var(--text);
+}
+html[data-theme="night"] .mobile-nav-divider {
+  background: var(--border);
+}
+
+/* ─── Night mode: nav scrolled elevation ────────────────────────── */
+html[data-theme="night"] .nav.scrolled {
+  box-shadow: 0 4px 28px rgba(0,0,0,.4);
+  border-bottom-color: var(--border-hover);
+}
+
+/* ─── Night mode: suppress hero aurora (body has own glows) ─────── */
+html[data-theme="night"] .hero::after {
+  display: none;
+}
