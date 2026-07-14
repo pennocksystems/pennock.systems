@@ -170,4 +170,61 @@
 
             <p class="signup-note">Don't have an account? <a href="contact.html">Contact our team</a> to get started.</p>
           </div>
-       
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 Pennock Systems. AI-powered business systems.</span>
+      <span>Automation · AI assistants · Web experiences · Operations</span>
+    </div>
+  </footer>
+
+  <script>
+  // ── Nav: scroll state ──────────────────────────────────────────
+  (function () {
+    var nav = document.querySelector('.nav');
+    if (!nav) return;
+    window.addEventListener('scroll', function () {
+      nav.classList.toggle('scrolled', window.scrollY > 30);
+    }, { passive: true });
+  })();
+
+  // ── Nav: hamburger ─────────────────────────────────────────────
+  (function () {
+    var hamburger = document.querySelector('.nav-hamburger');
+    var mobileNav = document.querySelector('.mobile-nav');
+    var nav = document.querySelector('.nav');
+    if (!hamburger || !mobileNav) return;
+    hamburger.addEventListener('click', function () {
+      var isOpen = mobileNav.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+    });
+    document.addEventListener('click', function (e) {
+      if (nav && !nav.contains(e.target)) {
+        mobileNav.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  })();
+
+  // ── Scroll reveal ──────────────────────────────────────────────
+  (function () {
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+    document.querySelectorAll('.reveal').forEach(function (el) {
+      revealObserver.observe(el);
+    });
+  })();
+  </script>
+</body>
+</html>
