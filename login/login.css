@@ -261,6 +261,19 @@
   font-size: 15px;
 }
 
+/* ── Login error message ────────────────────────────────────── */
+#login-error {
+  margin: 4px 0 0;
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(239,68,68,.28);
+  background: rgba(239,68,68,.06);
+  color: #ef4444;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: center;
+}
+
 /* ── Divider ────────────────────────────────────────────────── */
 .divider {
   display: flex;
