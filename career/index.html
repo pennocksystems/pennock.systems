@@ -181,8 +181,8 @@
             <p class="job-summary">
               Design and maintain custom automations that connect CRMs, scheduling tools, and communication platforms for our clients.
             </p>
-            <button class="learn-more" onclick="toggleJob(this)">Learn More</button>
-            <div class="job-details">
+            <button class="learn-more" onclick="toggleJob(this)" aria-expanded="false" aria-controls="job-details-1">Learn More</button>
+            <div class="job-details" id="job-details-1">
               <div class="feature-list">
                 <div class="feature-item">Design multi-step automation workflows</div>
                 <div class="feature-item">Integrate APIs across CRM, calendar, and messaging tools</div>
@@ -190,7 +190,7 @@
                 <div class="feature-item">Collaborate with the design team on system architecture</div>
               </div>
               <div class="job-apply-row">
-                <a class="button primary" href="mailto:careers@pennocksystems.com?subject=Application%3A%20AI%20Automation%20Specialist">Apply via Email</a>
+                <button type="button" class="button primary" onclick="openApplyModal('AI Automation Engineer')">Apply Now</button>
               </div>
             </div>
           </article>
@@ -208,8 +208,8 @@
             <p class="job-summary">
               Build clean, fast, conversion-focused websites and web apps for our growing client base.
             </p>
-            <button class="learn-more" onclick="toggleJob(this)">Learn More</button>
-            <div class="job-details">
+            <button class="learn-more" onclick="toggleJob(this)" aria-expanded="false" aria-controls="job-details-2">Learn More</button>
+            <div class="job-details" id="job-details-2">
               <div class="feature-list">
                 <div class="feature-item">Build responsive sites from design files</div>
                 <div class="feature-item">Implement AI assistant integrations into client sites</div>
@@ -217,7 +217,7 @@
                 <div class="feature-item">Maintain and update existing client websites</div>
               </div>
               <div class="job-apply-row">
-                <a class="button primary" href="mailto:careers@pennocksystems.com?subject=Application%3A%20Front-End%20Developer">Apply via Email</a>
+                <button type="button" class="button primary" onclick="openApplyModal('Sr. Front-End Developer')">Apply Now</button>
               </div>
             </div>
           </article>
@@ -235,8 +235,8 @@
             <p class="job-summary">
               Work directly with clients to identify automation opportunities and translate business needs into AI system requirements.
             </p>
-            <button class="learn-more" onclick="toggleJob(this)">Learn More</button>
-            <div class="job-details">
+            <button class="learn-more" onclick="toggleJob(this)" aria-expanded="false" aria-controls="job-details-3">Learn More</button>
+            <div class="job-details" id="job-details-3">
               <div class="feature-list">
                 <div class="feature-item">Run discovery calls with prospective clients</div>
                 <div class="feature-item">Map workflows and identify automation opportunities</div>
@@ -244,7 +244,7 @@
                 <div class="feature-item">Support onboarding for newly signed clients</div>
               </div>
               <div class="job-apply-row">
-                <a class="button primary" href="mailto:careers@pennocksystems.com?subject=Application%3A%20AI%20Solutions%20Consultant">Apply via Email</a>
+                <button type="button" class="button primary" onclick="openApplyModal('AI Strategy Consultant')">Apply Now</button>
               </div>
             </div>
           </article>
@@ -262,8 +262,8 @@
             <p class="job-summary">
               Serve as the main point of contact for our clients, handling questions, account updates, and ongoing support with a friendly, responsive approach.
             </p>
-            <button class="learn-more" onclick="toggleJob(this)">Learn More</button>
-            <div class="job-details">
+            <button class="learn-more" onclick="toggleJob(this)" aria-expanded="false" aria-controls="job-details-4">Learn More</button>
+            <div class="job-details" id="job-details-4">
               <div class="feature-list">
                 <div class="feature-item">Manage day-to-day client communication and resolve support requests</div>
                 <div class="feature-item">Guide new clients through onboarding and keep projects on schedule</div>
@@ -271,7 +271,7 @@
                 <div class="feature-item">Keep account records and support processes organized and up to date</div>
               </div>
               <div class="job-apply-row">
-                <a class="button primary" href="mailto:careers@pennocksystems.com?subject=Application%3A%20Customer%20Success%20Associate">Apply via Email</a>
+                <button type="button" class="button primary" onclick="openApplyModal('Account Manager')">Apply Now</button>
               </div>
             </div>
           </article>
@@ -287,7 +287,7 @@
           <div>
             <h2>Don't see the right role?</h2>
             <p>We're always open to meeting talented people. Send us a note and we'll keep you in mind for future opportunities.</p>
-            <a class="button primary" href="mailto:careers@pennocksystems.com?subject=General%20Application%20Inquiry">Send a General Application</a>
+            <button type="button" class="button primary" onclick="openApplyModal('General Application')">Send a General Application</button>
           </div>
         </div>
       </div>
@@ -323,6 +323,75 @@
     </div>
   </div>
 </footer>
+
+  <!-- APPLICATION MODAL -->
+  <div class="apply-modal" id="apply-modal" aria-hidden="true">
+    <div class="apply-modal-backdrop" onclick="closeApplyModal()"></div>
+    <div class="apply-modal-panel" role="dialog" aria-modal="true" aria-labelledby="apply-modal-title">
+      <button type="button" class="apply-modal-close" onclick="closeApplyModal()" aria-label="Close application form">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 6l12 12M18 6L6 18"></path>
+        </svg>
+      </button>
+
+      <div class="apply-modal-body" id="apply-modal-body">
+        <h2 id="apply-modal-title">Apply for <span id="apply-modal-role">this role</span></h2>
+        <p class="apply-modal-sub">Fields marked * are required. We'll reach out by email once we've reviewed your application.</p>
+
+        <form id="apply-form" class="apply-form" action="https://formspree.io/f/xljgqokq" method="POST" enctype="multipart/form-data">
+          <input type="hidden" name="position" id="apply-position-field" value="">
+          <input type="hidden" name="_subject" id="apply-subject-field" value="">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="apply-name">Full Name *</label>
+              <input type="text" id="apply-name" name="name" required placeholder="Alex Rivera">
+            </div>
+            <div class="form-group">
+              <label for="apply-email">Email *</label>
+              <input type="email" id="apply-email" name="email" required placeholder="alex@email.com">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="apply-phone">Phone</label>
+              <input type="tel" id="apply-phone" name="phone" placeholder="(555) 555-5555">
+            </div>
+            <div class="form-group">
+              <label for="apply-location">Location *</label>
+              <input type="text" id="apply-location" name="location" required placeholder="City, State / Country">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="apply-link">LinkedIn / Portfolio URL</label>
+            <input type="url" id="apply-link" name="portfolio_url" placeholder="https://linkedin.com/in/...">
+          </div>
+
+          <div class="form-group">
+            <label for="apply-resume">Resume *</label>
+            <input type="file" id="apply-resume" name="resume" accept=".pdf,.doc,.docx" required>
+          </div>
+
+          <div class="form-group">
+            <label for="apply-message">Anything else you'd like us to know?</label>
+            <textarea id="apply-message" name="message" rows="4" placeholder="Optional note..."></textarea>
+          </div>
+
+          <button type="submit" class="button primary submit-btn" id="apply-submit-btn">Submit Application</button>
+          <p class="apply-form-error" id="apply-form-error" hidden>Something went wrong sending your application. Please email us directly at <a href="mailto:pennocksystems@gmail.com">pennocksystems@gmail.com</a>.</p>
+        </form>
+      </div>
+
+      <div class="apply-modal-success" id="apply-modal-success" hidden>
+        <div class="apply-success-icon" aria-hidden="true">&check;</div>
+        <h2>Application received</h2>
+        <p>Thanks for applying for <strong id="apply-success-role">this role</strong> — we've got your resume and will be in touch soon.</p>
+        <button type="button" class="button secondary" onclick="closeApplyModal()">Close</button>
+      </div>
+    </div>
+  </div>
 
   <script>
   // ── Nav: scroll state ──────────────────────────────────────────
@@ -373,7 +442,80 @@
     var isOpen = card.classList.contains('open');
     card.classList.toggle('open');
     button.innerText = isOpen ? 'Learn More' : 'Show Less';
+    button.setAttribute('aria-expanded', String(!isOpen));
   }
+
+  // ── Application modal ────────────────────────────────────────
+  (function () {
+    var modal = document.getElementById('apply-modal');
+    var form = document.getElementById('apply-form');
+    var body = document.getElementById('apply-modal-body');
+    var success = document.getElementById('apply-modal-success');
+    var errorMsg = document.getElementById('apply-form-error');
+    var submitBtn = document.getElementById('apply-submit-btn');
+    var lastFocused = null;
+
+    window.openApplyModal = function (role) {
+      lastFocused = document.activeElement;
+
+      document.getElementById('apply-modal-role').textContent = role;
+      document.getElementById('apply-position-field').value = role;
+      document.getElementById('apply-subject-field').value = 'New Application: ' + role;
+      document.getElementById('apply-success-role').textContent = role;
+
+      form.reset();
+      form.hidden = false;
+      errorMsg.hidden = true;
+      body.hidden = false;
+      success.hidden = true;
+
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-locked');
+
+      var firstField = document.getElementById('apply-name');
+      if (firstField) firstField.focus();
+    };
+
+    window.closeApplyModal = function () {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('modal-locked');
+      if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+    };
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && modal.classList.contains('open')) closeApplyModal();
+    });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      errorMsg.hidden = true;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+
+      var formData = new FormData(form);
+
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { Accept: 'application/json' }
+      }).then(function (response) {
+        if (response.ok) {
+          form.hidden = true;
+          body.hidden = true;
+          success.hidden = false;
+        } else {
+          errorMsg.hidden = false;
+        }
+      }).catch(function () {
+        errorMsg.hidden = false;
+      }).finally(function () {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit Application';
+      });
+    });
+  })();
   </script>
 </body>
 </html>
